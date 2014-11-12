@@ -1,7 +1,7 @@
-Mon Nov 10 15:01:39 CST 2014 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+Tue Nov 11 21:19:56 CST 2014 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon Nov 10 15:01:40 CST 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0149-9b83-14a1-ffffc058739a 
+Tue Nov 11 21:19:56 CST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0149-a203-c325-ffffc058739a 
 on database directory /Users/brando/dev/linkeduapp/dbFiles/linkedu with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
 Loaded from file:/Applications/NetBeans/glassfish-4.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -13,19 +13,8 @@ os.version=10.9.4
 derby.system.home=/Users/brando/dev/linkeduapp/dbFiles
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Mon Nov 10 15:01:41 CST 2014:
-Shutting down instance a816c00e-0149-9b83-14a1-ffffc058739a on database directory /Users/brando/dev/linkeduapp/dbFiles/linkedu with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
-Mon Nov 10 15:01:41 CST 2014 Thread[DRDAConnThread_3,5,main] (DATABASE = linkedu), (DRDAID = {2}), Database 'linkedu' shutdown.
+Tue Nov 11 22:14:21 CST 2014: Shutting down Derby engine
 ----------------------------------------------------------------
-Mon Nov 10 15:01:48 CST 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 560740aa-0149-9b83-14a1-ffffc058739a 
-on database directory /Users/brando/dev/linkeduapp/dbFiles/linkedu with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
-Loaded from file:/Applications/NetBeans/glassfish-4.1/javadb/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_25-b17
-user.dir=/Applications/NetBeans/glassfish-4.1/javadb
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.9.4
-derby.system.home=/Users/brando/dev/linkeduapp/dbFiles
-Database Class Loader started - derby.database.classpath=''
+Tue Nov 11 22:14:21 CST 2014:
+Shutting down instance a816c00e-0149-a203-c325-ffffc058739a on database directory /Users/brando/dev/linkeduapp/dbFiles/linkedu with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
+----------------------------------------------------------------
