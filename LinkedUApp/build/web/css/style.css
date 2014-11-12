@@ -7,6 +7,34 @@ and open the template in the editor.
     Created on : Nov 11, 2014, 3:56:47 PM
     Author     : schifano
 */
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 3.0em;
+    color: #000;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
 #outer-wrapper {
     height: 280px;
     background: transparent;
@@ -35,23 +63,6 @@ and open the template in the editor.
     height: 20px;
     background-color: #333;
     color: #fff;
-}
-body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-    display: block;
-}
-
-h1, h2, h3, h4 {
-    font-weight: 300;
-}
-
-h1 {
-    font-weight: 400;
-    font-size: 3.0em;
-    color: #000;
 }
 
 #home {
@@ -90,11 +101,78 @@ h1 {
     margin: 10px;
 }
 
-#nav {
-    height: 50px;
+#dashboard {
+    background-color: #f0f0f0;
+}
+
+#dash-nav {
+    height: 65px;
     background-color: #333;
     width: 100%;
     position: relative;
     top: 0;
     margin: 0;
 } 
+
+#dash-nav ul {
+    margin: 0;
+}
+
+#dash-nav ul li {
+    list-style: none;
+    float: left;
+    color: #fff;
+    padding: 20px 20px 0px 0px;
+}
+
+#main-nav {
+    height: 45px;
+    background-color: #696969;
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin: 0;
+}
+
+.row {
+    width: 100%;
+    display: table;
+}
+#profile {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#profile-head {
+    background-color: #333;
+    height: 400px;
+    width: 150px;
+    display: table-cell;
+}
+
+#profile-mixtape {
+    background-color: orange;
+    width: 100px;
+    display: table-cell;
+    border-left: 20px solid #f0f0f0;
+}
+
+#profile-body {
+    background-color: purple;
+    width: 150px;
+    height: 500px;
+    display: table-cell;
+    border-top: 20px solid #f0f0f0;
+}
+
+#profile-picture {
+    width: 200px;
+    height: 200px;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+}

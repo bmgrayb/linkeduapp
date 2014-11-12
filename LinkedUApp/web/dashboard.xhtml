@@ -6,15 +6,32 @@
         <title>Dashboard LinkedU</title>
         <link href="css/style.css" rel="stylesheet"/>
     </h:head>
-    <h:body>
-        <div id="nav">
-            <ul>
+    <h:body id="dashboard">
+        <div id="dash-nav">
+            <ul class="dash-nav">
                 <li><img src="images/u.png" alt="U logo"/></li>
                 <li>Universities</li>
+                <li><h:inputText id="search" class="dash-search"></h:inputText></li>
             </ul>
         </div>
         
-        
+        <div id="profile">
+            <div class="row">
+                <div id="profile-head">
+                    <div id="profile-picture"><img src="images/skrillex.jpg" class="photo"/></div>
+                    <div id="profile-name">Sonny Moore</div>
+                    
+                </div>
+                <div id="profile-mixtape">
+                    <h2 style="vertical-align: text-top;">My Mixtape</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div id="profile-body">
+
+                </div>
+            </div>
+        </div>
     </h:body>
 </html>
 
