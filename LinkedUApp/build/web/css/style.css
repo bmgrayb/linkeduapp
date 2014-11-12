@@ -1,0 +1,103 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 11, 2014, 3:56:47 PM
+    Author     : schifano
+*/
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 3.0em;
+    color: #000;
+}
+
+#home {
+    background: url('../images/iwu.png') no-repeat bottom center fixed transparent;
+}
+
+#outer-wrapper {
+    height: 280px;
+    background: transparent;
+    top: 50%;
+    left: 50%;
+    border: none;
+    text-align: center;
+    position: fixed;
+    margin-top: -180px;
+    margin-left: -227.5px;
+    padding: 0;
+    width: 455px;
+}
+#signin {
+    width:455px;
+    height: 280px;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 6px 6px rgba(0,0,0,0.3);
+    padding: 20px;
+}
+#title {
+    position: absolute;
+}
+
+#mainfooter {
+    height: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    min-width: 974px;
+    width: 100%;
+    background: #202020;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 0px;
+    text-align: center;
+    color: #fff;
+}
+
+.main-field {
+    width: 350px;
+    height: 25px;
+    margin: 10px;
+    font-size: 1.2em;
+}
+.main-login-button {
+    width: 350px;
+    height: 30px;
+    border: 1px solid #1b5480;
+    border-radius: 3px;
+    background-color: #287bbc;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 10px;
+}
+
+#nav {
+    height: 50px;
+    background-color: #333;
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin: 0;
+} 
