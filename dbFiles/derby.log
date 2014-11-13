@@ -1,7 +1,7 @@
-Wed Nov 12 15:41:29 CST 2014 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+Thu Nov 13 15:50:20 CST 2014 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Wed Nov 12 15:49:28 CST 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0149-a5f4-42c2-ffffc058739a 
+Thu Nov 13 15:50:20 CST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0149-ab22-b9b6-ffffc058739a 
 on database directory /Users/brando/dev/linkeduapp/dbFiles/linkedu with class loader sun.misc.Launcher$AppClassLoader@5a07e868 
 Loaded from file:/Applications/NetBeans/glassfish-4.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation

@@ -71,7 +71,7 @@ create table linkedu.Appointment(
 create table linkedu.Multimedia(
 	mixtapeID		integer not null generated always as identity(start with 100, increment by 1),
 	studentID		integer,
-	mmBlob			blob(16M),
+	url			varchar(256),
         rating                  decimal(2,1),
 	primary key(mixtapeID)
 );

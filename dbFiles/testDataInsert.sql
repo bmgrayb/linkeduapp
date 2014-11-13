@@ -1,3 +1,4 @@
+
 --insert AppUser table
 insert into linkedu.appuser values('univ1','univ1');
 insert into linkedu.appuser values('univ2','univ2');
