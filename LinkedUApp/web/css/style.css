@@ -22,6 +22,8 @@ body {
 
 h1, h2, h3, h4 {
     font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -69,38 +71,6 @@ h2 {
     background: url('../images/iwu.png') no-repeat bottom center fixed transparent;
 }
 
-.site-footer {
-    position: fixed;
-    bottom: 0;
-    min-width: 974px;
-    width: 100%;
-    background: #202020;
-    border: none;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 0px;
-    text-align: center;
-    color: #fff;
-}
-
-.main-field {
-    width: 350px;
-    height: 25px;
-    margin: 10px;
-    font-size: 1.2em;
-}
-.main-login-button {
-    width: 350px;
-    height: 30px;
-    border: 1px solid #1b5480;
-    border-radius: 3px;
-    background-color: #287bbc;
-    font-size: 1.2em;
-    color: #fff;
-    margin: 10px;
-}
-
 #dashboard {
     background-color: #f0f0f0;
 }
@@ -134,10 +104,6 @@ h2 {
     margin: 0;
 }
 
-.row {
-    width: 100%;
-    display: table;
-}
 #profile {
     width: 80%;
     margin-left: auto;
@@ -147,21 +113,16 @@ h2 {
 
 #profile-head {
     background-color: #333;
-    height: 400px;
-    width: 150px;
-    display: table-cell;
 }
 
 #profile-mixtape {
     background-color: orange;
-    width: 100px;
-    display: table-cell;
     border-left: 20px solid #f0f0f0;
 }
 
 #profile-body {
     background-color: purple;
-    width: 150px;
+    width: 100%;
     height: 500px;
     display: table-cell;
     border-top: 20px solid #f0f0f0;
@@ -172,7 +133,82 @@ h2 {
     height: 200px;
 }
 
-.photo {
+.col40 {
+    width: 40%;
+    display: table-cell;
+}
+
+.col60 {
+    width: 60%;
+    display: table-cell;
+}
+
+.dash-pic {
     width: 200px;
     height: 200px;
+    float: left;
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    min-width: 974px;
+    width: 100%;
+    background: #202020;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 0px;
+    text-align: center;
+    color: #fff;
+}
+
+.main-field {
+    width: 350px;
+    height: 25px;
+    margin: 10px;
+    font-size: 1.2em;
+}
+.main-login-button {
+    width: 350px;
+    height: 30px;
+    border: 1px solid #1b5480;
+    border-radius: 3px;
+    background-color: #287bbc;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 10px;
+}
+
+
+.col66 {
+	width: 66%;
+	display: table-cell;
+        background-color: #fff;
+	color: #333;
+	padding: 20px;
+	border: 10px solid #f0f0f0;
+}
+.col33 {
+	width: 33%;
+	display: table-cell;
+        background-color: #fff;
+	color: #333;
+	padding: 20px;
+	border: 10px solid #f0f0f0;
+}
+
+.col99 {
+    width: 99%;
+    display: table-cell;
+    background-color: #fff;
+    color: #333;
+    border-top: 10px solid #f0f0f0;
+}
+
+.row {
+	width: 100%;
+	display: table;
+	clear: both;
 }
