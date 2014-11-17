@@ -93,11 +93,11 @@ public class RecruiterModel {
 
     /**
      * @param recruiterID the recruiterID to set
-     */
+     */ /*
     public void setRecruiterID(int recruiterID) {
         this.recruiterID = recruiterID;
     }
-
+*/
     /**
      * @return the universityID
      */
