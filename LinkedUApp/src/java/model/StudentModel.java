@@ -14,7 +14,7 @@ public class StudentModel {
     private String essay, apCourse, universities, majors;
     private boolean isPaidService;
     private float gpa;
-    private int studentID, ACT, SAT, PSAT, NMSQT;
+    private int studentID, ACT, SAT, PSAT, NMSQT, year;
     //Add in the picture as blob object.
   //  private String[] majors;
   //  private String[] universities;
@@ -183,9 +183,10 @@ public class StudentModel {
     /**
      * @param studentID the studentID to set
      */
+    /*
     public void setStudentID(int studentID) {
         this.studentID = studentID;
-    }
+    } */
 
     /**
      * @return the ACT

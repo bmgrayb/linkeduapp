@@ -165,9 +165,10 @@ public class UniversityModel {
     /**
      * @param universityID the universityID to set
      */
+    /*
     public void setUniversityID(int universityID) {
         this.universityID = universityID;
-    }
+    } */
 
     /**
      * @return the enrollment
