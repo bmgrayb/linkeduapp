@@ -7,6 +7,10 @@ and open the template in the editor.
     Created on : Nov 11, 2014, 3:56:47 PM
     Author     : schifano
 */
+html {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -18,6 +22,8 @@ body {
 
 h1, h2, h3, h4 {
     font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -26,8 +32,9 @@ h1 {
     color: #000;
 }
 
-#home {
-    background: url('../images/iwu.png') no-repeat bottom center fixed transparent;
+h2 {
+    font-weight: 300;
+    font-size: 2.5em;
 }
 
 #outer-wrapper {
@@ -60,6 +67,87 @@ h1 {
     color: #fff;
 }
 
+#home {
+    background: url('../images/iwu.png') no-repeat bottom center fixed transparent;
+}
+
+#dashboard {
+    background-color: #f0f0f0;
+}
+
+#dash-nav {
+    height: 65px;
+    background-color: #333;
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin: 0;
+} 
+
+#dash-nav ul {
+    margin: 0;
+}
+
+#dash-nav ul li {
+    list-style: none;
+    float: left;
+    color: #fff;
+    padding: 20px 20px 0px 0px;
+}
+
+#main-nav {
+    height: 45px;
+    background-color: #696969;
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin: 0;
+}
+
+#profile {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#profile-head {
+    background-color: #333;
+}
+
+#profile-mixtape {
+    background-color: orange;
+    border-left: 20px solid #f0f0f0;
+}
+
+#profile-body {
+    background-color: purple;
+    width: 100%;
+    height: 500px;
+    display: table-cell;
+    border-top: 20px solid #f0f0f0;
+}
+
+#profile-picture {
+    width: 200px;
+    height: 200px;
+}
+
+.col40 {
+    width: 40%;
+    display: table-cell;
+}
+
+.col60 {
+    width: 60%;
+    display: table-cell;
+}
+
+.dash-pic {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
 
 .site-footer {
     position: fixed;
@@ -93,11 +181,34 @@ h1 {
     margin: 10px;
 }
 
-#nav {
-    height: 50px;
-    background-color: #333;
-    width: 100%;
-    position: relative;
-    top: 0;
-    margin: 0;
-} 
+
+.col66 {
+	width: 66%;
+	display: table-cell;
+        background-color: #fff;
+	color: #333;
+	padding: 20px;
+	border: 10px solid #f0f0f0;
+}
+.col33 {
+	width: 33%;
+	display: table-cell;
+        background-color: #fff;
+	color: #333;
+	padding: 20px;
+	border: 10px solid #f0f0f0;
+}
+
+.col99 {
+    width: 99%;
+    display: table-cell;
+    background-color: #fff;
+    color: #333;
+    border-top: 10px solid #f0f0f0;
+}
+
+.row {
+	width: 100%;
+	display: table;
+	clear: both;
+}
