@@ -7,14 +7,15 @@ package dao;
 
 import java.util.ArrayList;
 import java.util.Date;
+import model.AppointmentModel;
 
 /**
  *
  * @author brando
  */
 public interface AppointmentDAO {
-    public ArrayList<Appointment> getAllAppointments();
-    public ArrayList<Appointment> getUniversityAppointments();
-    public ArrayList<Appointment> getStudentAppointments();
-    public Appointment getAppointment(int studentID, int universityID, Date date);
+    public ArrayList<AppointmentModel> getAllAppointments();
+    public ArrayList<AppointmentModel> getUniversityAppointments();
+    public ArrayList<AppointmentModel> getStudentAppointments();
+    public AppointmentModel getAppointment(int studentID, int universityID, Date date);
 }

@@ -11,7 +11,7 @@ package model;
  */
 public class StudentModel {
     private String username, email, firstName, lastName, highSchool;
-    private String essay, apCourse, universities, majors;
+    private String essay, apCourse, universities, majors, password;
     private boolean isPaidService;
     private float gpa;
     private int studentID, ACT, SAT, PSAT, NMSQT, year;
@@ -148,7 +148,7 @@ public class StudentModel {
     /**
      * @return the isPaidService
      */
-    public boolean isIsPaidService() {
+    public boolean getIsPaidService() {
         return isPaidService;
     }
 
@@ -157,6 +157,15 @@ public class StudentModel {
      */
     public void setIsPaidService(boolean isPaidService) {
         this.isPaidService = isPaidService;
+    }
+    
+    //will set boolean based on int value recieved
+    //1 for true, 2 for false
+    public void setIsPaidService(int v){
+        if(v == 1)
+            isPaidService = true;
+        if(v == 2)
+            isPaidService = false;
     }
 
     /**
@@ -242,5 +251,33 @@ public class StudentModel {
      */
     public void setNMSQT(int NMSQT) {
         this.NMSQT = NMSQT;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the year
+     */
+    public int getYear() {
+        return year;
+    }
+
+    /**
+     * @param year the year to set
+     */
+    public void setYear(int year) {
+        this.year = year;
     }
 }

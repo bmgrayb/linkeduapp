@@ -13,11 +13,11 @@
         <h1>Nice to meet you!</h1>
         <p>Tell us a bit about yourself.</p>
         <h:form id="joinStudentForm">
-            <div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{userController.theUserModel.firstName}" class="join-field"></h:inputText><br/>
-            <div class="field-text">Last Name:</div>       <h:inputText id="lastName" value="#{userController.theUserModel.lastName}" class="join-field"></h:inputText><br/>
-            <div class="field-text">User Name:</div>       <h:inputText id="userName" class="join-field"></h:inputText><br/>
+            <div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{studentController.theUserModel.firstName}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Last Name:</div>       <h:inputText id="lastName" value="#{studentController.theUserModel.lastName}" class="join-field"></h:inputText><br/>
+            <div class="field-text">User Name:</div>       <h:inputText id="userName" value="#{studentController.theUserModel.username}" class="join-field"></h:inputText><br/>
             <div class="field-text">High School:</div>
-                        <h:selectOneMenu value="#{userData.data}" class="field-drop">
+                        <h:selectOneMenu value="#{studentController.theUserModel.highSchool}" class="field-drop">
                             <f:selectItem itemValue="2" itemLabel="Bloomington High School" />
                             <f:selectItem itemValue="2" itemLabel="Calvary Baptist High School" />
                             <f:selectItem itemValue="2" itemLabel="Central Catholic High School" />
@@ -26,20 +26,20 @@
                             <f:selectItem itemValue="2" itemLabel="University High School" />
                         </h:selectOneMenu><br/><br/>
             <div class="field-text">Current Year:</div>
-                        <h:selectOneMenu value="#{userData.data}" class="field-drop">
+                        <h:selectOneMenu value="#{studentController.theUserModel.year}" class="field-drop">
                             <f:selectItem itemValue="1" itemLabel="Freshman" />
                             <f:selectItem itemValue="2" itemLabel="Sophomore" />	   							
                             <f:selectItem itemValue="3" itemLabel="Junior" />
                             <f:selectItem itemValue="4" itemLabel="Senior" />	   							
                         </h:selectOneMenu><br/><br/>
-            <div class="field-text">Email:</div>           <h:inputText id="email" value="#{userController.theUserModel.email}" class="join-field"></h:inputText><br/>
-            <div class="field-text">Password:</div>    <h:inputText id="password" value="#{userController.theLoginInfoModel.PASSWORD}" class="join-field"></h:inputText><br/>      
+            <div class="field-text">Email:</div>           <h:inputText id="email" value="#{studentController.theUserModel.email}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Password:</div>    <h:inputText id="password" value="#{studentController.theUserModel.password}" class="join-field"></h:inputText><br/>      
             <div class="field-text"></div>              
-                        <h:selectOneMenu value="#{userData.data}" class="field-drop">
+            <h:selectOneMenu value="#{studentController.theUserModel.isPaidService}" class="field-drop">
                             <f:selectItem itemValue="1" itemLabel="I would like the paid service." />
                             <f:selectItem itemValue="2" itemLabel="Standard service, please." />	   							 							
                         </h:selectOneMenu><br/><br/>
-            <h:commandButton id="submitID" value="Join" action="#{userController.createUser()}" class="join-button"/><br/>
+            <h:commandButton id="submitID" value="Join" action="#{studentController.createUser()}" class="join-button"/><br/>
         </h:form>
     </div>
     </h:body>

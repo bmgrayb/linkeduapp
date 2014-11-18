@@ -6,14 +6,14 @@
 package dao;
 
 import java.util.ArrayList;
-
+import model.UniversityModel;
 /**
  *
  * @author brando
  */
 public interface UniversityDAO {
-    public ArrayList<University> getAllUniversities();
-    public University getUniversityByID(int id);
-    public ArrayList<University> getUniversitiesEnrollmentGreater(int enrollment);
-    public ArrayList<University> getUniversitiesEnrollmentSmaller(int enrollment);
+    public ArrayList<UniversityModel> getAllUniversities();
+    public UniversityModel getUniversityByID(int id);
+    public ArrayList<UniversityModel> getUniversitiesEnrollmentGreater(int enrollment);
+    public ArrayList<UniversityModel> getUniversitiesEnrollmentSmaller(int enrollment);
 }
