@@ -7,7 +7,7 @@
         <title>Join LinkedU</title>
         <link href="css/style.css" rel="stylesheet"/>
     </h:head>
-    <h:body id="join-student-bkgrd">
+    <h:body id="join-recruiter-bkgrd">
     <img src="../images/linkedu-small.png" alt="LinkedU Logo" class="logo-top" style="margin: 10px;"/>
     <div id="join-student">
         <h1>Nice to meet you!</h1>
@@ -16,22 +16,7 @@
             <div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{userController.theUserModel.firstName}" class="join-field"></h:inputText><br/>
             <div class="field-text">Last Name:</div>       <h:inputText id="lastName" value="#{userController.theUserModel.lastName}" class="join-field"></h:inputText><br/>
             <div class="field-text">User Name:</div>       <h:inputText id="userName" class="join-field"></h:inputText><br/>
-            <div class="field-text">High School:</div>
-                        <h:selectOneMenu value="#{userData.data}" class="field-drop">
-                            <f:selectItem itemValue="2" itemLabel="Bloomington High School" />
-                            <f:selectItem itemValue="2" itemLabel="Calvary Baptist High School" />
-                            <f:selectItem itemValue="2" itemLabel="Central Catholic High School" />
-                            <f:selectItem itemValue="1" itemLabel="Normal Community High School" />
-                            <f:selectItem itemValue="2" itemLabel="Normal Community West High School" />
-                            <f:selectItem itemValue="2" itemLabel="University High School" />
-                        </h:selectOneMenu><br/><br/>
-            <div class="field-text">Current Year:</div>
-                        <h:selectOneMenu value="#{userData.data}" class="field-drop">
-                            <f:selectItem itemValue="1" itemLabel="Freshman" />
-                            <f:selectItem itemValue="2" itemLabel="Sophomore" />	   							
-                            <f:selectItem itemValue="3" itemLabel="Junior" />
-                            <f:selectItem itemValue="4" itemLabel="Senior" />	   							
-                        </h:selectOneMenu><br/><br/>
+            <div class="field-text">University ID:</div>   <h:inputText id="universityID" class="join-field"></h:inputText><br/>
             <div class="field-text">Email:</div>           <h:inputText id="email" value="#{userController.theUserModel.email}" class="join-field"></h:inputText><br/>
             <div class="field-text">Password:</div>    <h:inputText id="password" value="#{userController.theLoginInfoModel.PASSWORD}" class="join-field"></h:inputText><br/>      
             <div class="field-text"></div>              
