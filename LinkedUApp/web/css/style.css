@@ -27,7 +27,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: bold;
     font-size: 3.0em;
     color: #000;
 }
@@ -72,27 +72,33 @@ h2 {
 }
 
 #dashboard {
-    background-color: #f0f0f0;
+    background-color: #e6e6e6;
 }
 
-#dash-nav {
-    height: 65px;
+#nav {
+    clear: both;
+    height: 60px;
     background-color: #333;
-    width: 100%;
-    position: relative;
-    top: 0;
     margin: 0;
+    padding: 0;
 } 
 
-#dash-nav ul {
+#nav ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-#dash-nav ul li {
-    list-style: none;
+#nav ul li {
+    padding: 20px;
     float: left;
+    display: block;
     color: #fff;
-    padding: 20px 20px 0px 0px;
+}
+
+#nav ul li a:link {
+    color: #fff;
+    font-size: 1.0em;
 }
 
 #main-nav {
@@ -111,13 +117,10 @@ h2 {
     margin-top: 20px;
 }
 
-#profile-head {
-    background-color: #333;
-}
 
 #profile-mixtape {
     background-color: orange;
-    border-left: 20px solid #f0f0f0;
+    border-left: 20px solid #e6e6e6;
 }
 
 #profile-body {
@@ -125,12 +128,39 @@ h2 {
     width: 100%;
     height: 500px;
     display: table-cell;
-    border-top: 20px solid #f0f0f0;
+    border-top: 20px solid #e6e6e6;
 }
 
 #profile-picture {
     width: 200px;
     height: 200px;
+}
+
+#join-recruiter {
+    padding: 50px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#join-recruiter-bkgrd {
+    background-color: #e6e6e6;
+    width: 38%;    
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#join-student {
+    background-color: #fff;
+    padding: 50px;
+}
+#join-student-bkgrd {
+    background-color: #e6e6e6;
+    width: 38%;    
+    margin-left: auto;
+    margin-right: auto;
+}
+#joinStudentForm inputText {
+    width: 600px;
 }
 
 .col40 {
@@ -156,19 +186,47 @@ h2 {
     width: 100%;
     background: #202020;
     border: none;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-left: 15px;
     padding-right: 0px;
     text-align: center;
     color: #fff;
 }
 
+.site-footer a {
+    color: #287bbc;
+}
+
 .main-field {
     width: 350px;
     height: 25px;
-    margin: 10px;
+    margin: 8px;
     font-size: 1.2em;
+}
+.join-field {
+    width: 300px;
+    height: 15px;
+    font-size: 1.2em;
+    margin: 8px;
+}
+
+.field-text {
+    width: 100px;
+    float: left;
+    margin: 8px;
+    vertical-align: bottom;
+}
+.field-drop {
+    border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+    width: 305px;
+    height: 25px;
+    padding: 5px;
+    font-size: 0.9em;
+    margin-left: 8px;
+    margin-top: 5px;
 }
 .main-login-button {
     width: 350px;
@@ -184,11 +242,11 @@ h2 {
 
 .col66 {
 	width: 66%;
+        height: 200px;
 	display: table-cell;
         background-color: #fff;
 	color: #333;
-	padding: 20px;
-	border: 10px solid #f0f0f0;
+	border: 10px solid #e6e6e6;
 }
 .col33 {
 	width: 33%;
@@ -196,7 +254,20 @@ h2 {
         background-color: #fff;
 	color: #333;
 	padding: 20px;
-	border: 10px solid #f0f0f0;
+	border: 10px solid #e6e6e6;
+}
+
+.profile66 {
+	width: 66%;
+        background-color: #fff;
+	color: #333;
+        float: left;
+}
+.profile33 {
+	width: 33%;
+        background-color: #fff;
+	color: #333;
+        float: left;
 }
 
 .col99 {
@@ -204,11 +275,27 @@ h2 {
     display: table-cell;
     background-color: #fff;
     color: #333;
-    border-top: 10px solid #f0f0f0;
+    border-top: 10px solid #e6e6e6;
 }
 
 .row {
 	width: 100%;
 	display: table;
 	clear: both;
+}
+
+.join-button {
+    width: 420px;
+    height: 30px;
+    border: 1px solid #1b5480;
+    border-radius: 3px;
+    background-color: #287bbc;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 10px;
+}
+
+.profile-section {
+    border-bottom: 20px solid #e6e6e6;
+    padding: 20px;
 }
