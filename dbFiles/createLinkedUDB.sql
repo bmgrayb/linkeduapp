@@ -17,11 +17,11 @@ create table linkedu.Student(
         studentID               INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 100, INCREMENT BY 1),
         email                   varchar(25),
         firstName               varchar(25),
-        lastName               varchar(25),
-        highSchool               varchar(25),
+        lastName                varchar(25),
+        highSchool              varchar(25),
         gpa                     decimal(3,2),
         actScore                integer,
-        atScore                 integer,
+        satScore                 integer,
         psatScore               integer,
         nmsqtScore              integer,
         apCourse                varchar(256),
@@ -29,15 +29,17 @@ create table linkedu.Student(
 	universities            varchar(256),
 	majors			varchar(256),
 	isPaidService           boolean,
+        picture                 blob(8M),
 	primary key(username)
 );
 
 create table linkedu.University(
 	username 		varchar(25) not null,
 	password 		varchar(25) not null,
-	universityID	INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 100, INCREMENT BY 1),
-	officialName	varchar(25) not null,
-	availability	varchar(25),
+	universityID            INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 100, INCREMENT BY 1),
+	officialName            varchar(25) not null,
+        enrollment              integer,
+	availability            varchar(25),
 	address			varchar(25),
 	city			varchar(25),
 	stAbbr			varchar(2),
@@ -69,7 +71,7 @@ create table linkedu.Appointment(
 create table linkedu.Multimedia(
 	mixtapeID		integer not null generated always as identity(start with 100, increment by 1),
 	studentID		integer,
-	mmBlob			blob(16M),
+	url			varchar(256),
         rating                  decimal(2,1),
 	primary key(mixtapeID)
 );
