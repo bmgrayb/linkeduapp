@@ -158,6 +158,12 @@ public class StudentModel {
     public void setIsPaidService(boolean isPaidService) {
         this.isPaidService = isPaidService;
     }
+    
+    public void setIsPaidService(int x){
+        if(x == 1)
+            isPaidService = true;
+        else isPaidService = false;
+    }
 
     /**
      * @return the gpa

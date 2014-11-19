@@ -13,14 +13,14 @@
         <h1>Nice to meet you!</h1>
         <p>Tell us a bit about yourself.</p>
         <h:form id="joinStudentForm">
-            <div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{userController.theUserModel.firstName}" class="join-field"></h:inputText><br/>
-            <div class="field-text">Last Name:</div>       <h:inputText id="lastName" value="#{userController.theUserModel.lastName}" class="join-field"></h:inputText><br/>
-            <div class="field-text">User Name:</div>       <h:inputText id="userName" class="join-field"></h:inputText><br/>
-            <div class="field-text">University ID:</div>   <h:inputText id="universityID" class="join-field"></h:inputText><br/>
-            <div class="field-text">Email:</div>           <h:inputText id="email" value="#{userController.theUserModel.email}" class="join-field"></h:inputText><br/>
-            <div class="field-text">Password:</div>    <h:inputText id="password" value="#{userController.theLoginInfoModel.PASSWORD}" class="join-field"></h:inputText><br/>      
+            <div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{recruiterController.theModel.firstName}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Last Name:</div>       <h:inputText id="lastName" value="#{recruiterController.theModel.lastName}" class="join-field"></h:inputText><br/>
+            <div class="field-text">User Name:</div>       <h:inputText id="userName" value="#{recruiterController.theModel.username}" class="join-field"></h:inputText><br/>
+            <div class="field-text">University ID:</div>   <h:inputText id="universityID" value="#{recruiterController.theModel.universityID}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Email:</div>           <h:inputText id="email" value="#{recruiterController.theModel.email}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Password:</div>    <h:inputText id="password" value="#{recruiterController.theModel.password}" class="join-field"></h:inputText><br/>      
             <div class="field-text"></div>              
-                        <h:selectOneMenu value="#{userData.data}" class="field-drop">
+            <h:selectOneMenu value="#{recruiterController.theModel.isPaidService}" class="field-drop">
                             <f:selectItem itemValue="1" itemLabel="I would like the paid service." />
                             <f:selectItem itemValue="2" itemLabel="Standard service, please." />	   							 							
                         </h:selectOneMenu><br/><br/>

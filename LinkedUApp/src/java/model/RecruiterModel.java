@@ -125,4 +125,10 @@ public class RecruiterModel {
     public void setIsPaidService(boolean isPaidService) {
         this.isPaidService = isPaidService;
     }
+    
+    public void setIsPaidService(int x){
+        if(x == 1)
+            isPaidService = true;
+        else isPaidService = false;
+    }
 }
