@@ -7,6 +7,7 @@ package dao;
 
 import java.util.ArrayList;
 import model.UniversityModel;
+
 /**
  *
  * @author brando
@@ -16,4 +17,5 @@ public interface UniversityDAO {
     public UniversityModel getUniversityByID(int id);
     public ArrayList<UniversityModel> getUniversitiesEnrollmentGreater(int enrollment);
     public ArrayList<UniversityModel> getUniversitiesEnrollmentSmaller(int enrollment);
+    public int addUniversity(UniversityModel univ);
 }

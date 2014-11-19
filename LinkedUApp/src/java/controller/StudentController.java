@@ -6,7 +6,7 @@
 package controller;
 
 import dao.StudentDAO;
-import dao.StudentDAOImp;
+import dao.StudentDAOImpl;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import model.StudentModel;
@@ -60,8 +60,8 @@ public class StudentController {
     }
     
     public String createStudent(){
-        StudentDAO aStudentDAO = new StudentDAOImp();
-        int status = aStudentDAO.createStudent(theUserModel);
+        StudentDAO aStudentDAO = new StudentDAOImpl();
+        int status = aStudentDAO.addStudent(theUserModel);
         if (status == 1)
             return "dashboard.xhtml";
         else return "error.xhml";

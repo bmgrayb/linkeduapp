@@ -5,10 +5,15 @@
  */
 package dao;
 
+import model.AppUserModel;
+
 /**
  *
  * @author brando
  */
 public interface AppUserDAO {
+    //this method will return true if the username and password are correct
     public boolean validate(String username, String password);
+    //this method will return 1 if the row is created sucessfully
+    public int addUser(AppUserModel user);
 }

@@ -16,7 +16,5 @@ public interface StudentDAO {
     public ArrayList<StudentModel> getAllStudents();
     public StudentModel getStudentByID(int id);
     public ArrayList<StudentModel> getStudentsWithGreaterGPA(double gpa);
-    
-    //Create method
-    public int createStudent(StudentModel stu);
+    public int addStudent(StudentModel stu);
 }

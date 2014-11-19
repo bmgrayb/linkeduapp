@@ -10,8 +10,8 @@ package model;
  * @author chris
  */
 public class StudentModel {
-    private String username, email, firstName, lastName, highSchool;
-    private String essay, apCourse, universities, majors, password;
+    private String username,password, email, firstName, lastName, highSchool;
+    private String essay, apCourse, universities, majors;
     private boolean isPaidService;
     private float gpa;
     private int studentID, ACT, SAT, PSAT, NMSQT, year;
@@ -158,15 +158,6 @@ public class StudentModel {
     public void setIsPaidService(boolean isPaidService) {
         this.isPaidService = isPaidService;
     }
-    
-    //will set boolean based on int value recieved
-    //1 for true, 2 for false
-    public void setIsPaidService(int v){
-        if(v == 1)
-            isPaidService = true;
-        if(v == 2)
-            isPaidService = false;
-    }
 
     /**
      * @return the gpa
@@ -192,10 +183,10 @@ public class StudentModel {
     /**
      * @param studentID the studentID to set
      */
-    /*
+    
     public void setStudentID(int studentID) {
         this.studentID = studentID;
-    } */
+    } 
 
     /**
      * @return the ACT
