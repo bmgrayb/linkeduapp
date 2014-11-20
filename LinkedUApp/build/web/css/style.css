@@ -310,3 +310,16 @@ h2 {
     border-bottom: 20px solid #e6e6e6;
     padding: 20px;
 }
+
+
+
+.edit-button {
+    width: 100px;
+    height: 20px;
+    border: 1px solid #1b5480;
+    border-radius: 0px;
+    background-color: #287bbc;
+    font-size: 1.0em;
+    color: #fff;
+    margin-top: 10px;  
+}
