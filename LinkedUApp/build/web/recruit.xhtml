@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Join LinkedU</title>
+        <title>Recruiters Join LinkedU</title>
         <link href="css/style.css" rel="stylesheet"/>
     </h:head>
     <h:body id="join-recruiter-bkgrd">
@@ -18,7 +18,7 @@
             <div class="field-text">User Name:</div>       <h:inputText id="userName" class="join-field"></h:inputText><br/>
             <div class="field-text">University ID:</div>   <h:inputText id="universityID" class="join-field"></h:inputText><br/>
             <div class="field-text">Email:</div>           <h:inputText id="email" value="#{userController.theUserModel.email}" class="join-field"></h:inputText><br/>
-            <div class="field-text">Password:</div>    <h:inputText id="password" value="#{userController.theLoginInfoModel.PASSWORD}" class="join-field"></h:inputText><br/>      
+            <div class="field-text">Password:</div>        <h:inputSecret id="password" value="#{userController.theLoginInfoModel.PASSWORD}" class="join-field"></h:inputSecret><br/>      
             <div class="field-text"></div>              
                         <h:selectOneMenu value="#{userData.data}" class="field-drop">
                             <f:selectItem itemValue="1" itemLabel="I would like the paid service." />
