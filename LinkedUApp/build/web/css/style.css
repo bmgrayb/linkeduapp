@@ -315,11 +315,11 @@ h2 {
 
 .edit-button {
     width: 100px;
-    height: 20px;
+    height: 22px;
     border: 1px solid #1b5480;
     border-radius: 0px;
     background-color: #287bbc;
-    font-size: 1.0em;
+    font-size: 0.8em;
     color: #fff;
     margin-top: 10px;  
 }
