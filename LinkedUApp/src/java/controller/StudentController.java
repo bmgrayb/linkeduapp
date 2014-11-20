@@ -59,7 +59,7 @@ public class StudentController {
         this.response = response;
     }
     
-    public String createStudent(){
+    public String addStudent(){
         StudentDAO aStudentDAO = new StudentDAOImpl();
         int status = aStudentDAO.addStudent(theUserModel);
         if (status == 1)

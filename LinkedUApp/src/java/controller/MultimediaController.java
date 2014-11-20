@@ -9,14 +9,18 @@ import dao.MultimediaDAO;
 import dao.MultimediaDAOImpl;
 import dao.StudentDAO;
 import dao.StudentDAOImpl;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+//import javax.inject.Named;
 import model.MultimediaModel;
 
 /**
  *
  * @author mcpouls
  */
-@Named(value = "multimediaController")
+//@Named(value = "multimediaController")
+@ManagedBean
+@SessionScoped
 public class MultimediaController 
 {
     private String response;

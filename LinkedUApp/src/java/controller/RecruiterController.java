@@ -21,6 +21,10 @@ public class RecruiterController {
     private RecruiterModel theModel;
     private String response;
 
+    public RecruiterController(){
+        theModel = new RecruiterModel();
+    }
+    
     /**
      * @return the theModel
      */

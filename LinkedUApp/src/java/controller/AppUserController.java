@@ -5,15 +5,19 @@
  */
 
 package controller;
-import javax.inject.Named;
+//import javax.inject.Named;
 import model.AppUserModel;
 import dao.AppUserDAO;
 import dao.AppUserDAOImpl;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 /**
  *
  * @author mcpouls
  */
-@Named(value = "appUserController")
+//@Named(value = "appUserController")
+@ManagedBean
+@SessionScoped
 public class AppUserController 
 {
     private String response;

@@ -5,7 +5,7 @@
  */
 
 package controller;
-import javax.inject.Named;
+//import javax.inject.Named;
 import model.AppointmentModel;
 import dao.AppointmentDAO;
 import dao.AppointmentDAOImpl;
@@ -13,12 +13,16 @@ import dao.RecruiterDAO;
 import dao.RecruiterDAOImpl;
 import dao.StudentDAO;
 import dao.StudentDAOImpl;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 /**
  *
  * @author mcpouls
  */
-@Named(value = "appointmentController")
+//@Named(value = "appointmentController")
+@ManagedBean
+@SessionScoped
 public class AppointmentController 
 {
     private String response;
