@@ -204,6 +204,35 @@ public class AppointmentDAOImpl implements AppointmentDAO{
         return appt;
         
     }
+    
+    @Override
+    public int updateAppointment(AppointmentModel appt){
+        
+        DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
+        String myDB = "jdbc:derby://localhost:1527/linkedu";
+        Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
+        String insertString = "";
+        
+        int row = 0;
+        
+        try{
+            Statement stmt = DBConn.createStatement();
+            insertString = "Update linkedu.Appointment "
+            + "set date = '" + appt.getVisitDate().toString() + "' "
+            +"where studentid = " + appt.getStudentID() 
+            + "and universityid = " + appt.getUniversityID();
+            
+            row = stmt.executeUpdate(insertString);
+            System.out.println("Insert String: " + insertString);
+            DBConn.close();
+            
+        } catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+        
+        return row;
+        
+    }
 
     @Override
     public int addAppointment(AppointmentModel appt) {
