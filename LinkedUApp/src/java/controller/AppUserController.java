@@ -59,6 +59,15 @@ public class AppUserController
         this.theModel = theModel;
     }
     
+    public String validate()
+    {
+        AppUserDAO apd = new AppUserDAOImpl();
+        if(apd.validate(theModel.getUsername(), theModel.getPassword()))
+        {return "Valid information";}
+        else
+        {return "Invalid information";}
+    }
+    
     public String addAppUser()
     {
         int status;
