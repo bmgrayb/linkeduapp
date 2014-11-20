@@ -132,6 +132,39 @@ public class RecruiterDAOImpl implements RecruiterDAO{
     }
 
     @Override
+    public int updateRecruiter(RecruiterModel rec){
+        
+        DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
+        String myDB = "jdbc:derby://localhost:1527/linkedu";
+        Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
+        String insertString = "";
+        
+        int row = 0;
+        
+        try{
+            Statement stmt = DBConn.createStatement();
+            insertString = "Update linkedu.Recruiter "
+            + "set password = '" + rec.getPassword() + "', "
+            + "set university = " + rec.getUniversityID() + ", "
+            + "set firstname = '" + rec.getFirstName() + "', "
+            + "set lastname = '" + rec.getLastName() + "', "
+            + "set email = '" + rec.getEmail() + "', "
+            + "set ispaidservice = " + rec.isIsPaidService()
+            + "where username = '" + rec.getUsername() + "'";
+            
+            row = stmt.executeUpdate(insertString);
+            System.out.println("Insert String: " + insertString);
+            DBConn.close();
+            
+        } catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+        
+        return row;
+        
+    }
+    
+    @Override
     public int addRecruiter(RecruiterModel rec) {
 
         DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");

@@ -15,5 +15,6 @@ import model.RecruiterModel;
 public interface RecruiterDAO {
     ArrayList<RecruiterModel> getAllRecruiters();
     RecruiterModel getRecruiterByID(int id);
+    public int updateRecruiter(RecruiterModel rec);
     public int addRecruiter(RecruiterModel rec);
 }

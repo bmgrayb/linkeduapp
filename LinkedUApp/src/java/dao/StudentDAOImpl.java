@@ -255,6 +255,49 @@ public class StudentDAOImpl implements StudentDAO{
     }
 
     @Override
+    public int updateStudent(StudentModel stu){
+        
+         DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
+        String myDB = "jdbc:derby://localhost:1527/linkedu";
+        Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
+        String insertString = "";
+        
+        int row = 0;
+        
+        try{
+            Statement stmt = DBConn.createStatement();
+            insertString = "update linkedu.Student "
+            + "set password = '" + stu.getPassword() + "', "
+            + "set email = '" + stu.getEmail() + "', "
+            + "set firstname = '" + stu.getFirstName() + "', "
+            + "set lastname = '" + stu.getLastName() + "', "
+            + "set year =" + stu.getYear() + ", "
+            + "set highschool = '" + stu.getHighSchool() + "' ,"
+            + "set gpa = " + stu.getGpa() + ", "
+            + "set actscore = " + stu.getACT() + ", "
+            + "set satscore = " + stu.getSAT() + ", "
+            + "set psatscore = " + stu.getPSAT() +", "
+            + "set nmsqtscore = " + stu.getNMSQT() + ", "
+            + "set apcourse = '" + stu.getApCourse() + "', "
+            + "set essay = '" + stu.getEssay() + "', "
+            + "set universities = '" + stu.getUniversities() + "', "
+            + "set majors = '" + stu.getMajors() + "', "
+            + "set ispaidservice = " + stu.getIsPaidService()
+            +"where username = '" + stu.getUsername() + "'";
+            
+            row = stmt.executeUpdate(insertString);
+            System.out.println("Insert String: " + insertString);
+            DBConn.close();
+            
+        } catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+        
+        return row;
+        
+    }
+    
+    @Override
     public int addStudent(StudentModel stu) {
 
         DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
