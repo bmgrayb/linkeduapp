@@ -75,6 +75,7 @@ h2 {
     background-color: #e6e6e6;
 }
 
+/****** NAVIGATION ******/
 #nav {
     clear: both;
     height: 60px;
@@ -110,13 +111,14 @@ h2 {
     margin: 0;
 }
 
+
+/****** PROFILE *****/
 #profile {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
 }
-
 
 #profile-mixtape {
     background-color: orange;
@@ -163,6 +165,10 @@ h2 {
     width: 600px;
 }
 
+
+
+
+/****** COLUMNS *****/
 .col40 {
     width: 40%;
     display: table-cell;
@@ -173,11 +179,16 @@ h2 {
     display: table-cell;
 }
 
+
+
 .dash-pic {
     width: 200px;
     height: 200px;
     float: left;
 }
+
+
+
 
 .site-footer {
     position: fixed;
@@ -207,7 +218,7 @@ h2 {
 .join-field {
     width: 300px;
     height: 15px;
-    font-size: 1.2em;
+    font-size: 1.0em;
     margin: 8px;
 }
 
