@@ -18,6 +18,7 @@ create table linkedu.Student(
         email                   varchar(25),
         firstName               varchar(25),
         lastName                varchar(25),
+        schoolYear              integer,
         highSchool              varchar(25),
         gpa                     decimal(3,2),
         actScore                integer,

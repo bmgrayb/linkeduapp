@@ -93,11 +93,11 @@ public class RecruiterModel {
 
     /**
      * @param recruiterID the recruiterID to set
-     */ /*
+     */ 
     public void setRecruiterID(int recruiterID) {
         this.recruiterID = recruiterID;
     }
-*/
+
     /**
      * @return the universityID
      */
@@ -124,5 +124,11 @@ public class RecruiterModel {
      */
     public void setIsPaidService(boolean isPaidService) {
         this.isPaidService = isPaidService;
+    }
+    
+    public void setIsPaidService(int x){
+        if(x == 1)
+            isPaidService = true;
+        else isPaidService = false;
     }
 }

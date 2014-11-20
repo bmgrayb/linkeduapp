@@ -11,9 +11,9 @@ insert into linkedu.appuser values('rec2','rec2');
 insert into linkedu.appuser values('rec3','rec3');
 
 --insert into student table
-insert into linkedu.STUDENT values ('stu1', 'stu1', default, 'stu1@school.edu', 'Student', 'One', 'Normal Community', 4.0, 36, null, null, null, 'Calc;Computer Science', 'I am awesome.', 'MIT', 'Computer Engineering', true, null);
-insert into linkedu.STUDENT values ('stu2', 'stu2', default, 'stu2@school.edu', 'Student', 'Two', 'Normal West', 3.8, 32, 1200, null, null, 'Calc;Computer Science;English', 'I am better than everyone else.', 'Illinois State University', 'Computer Science', false, null);
-insert into linkedu.STUDENT values ('stu3', 'stu3', default, 'stu3@school.edu', 'Student', 'Three', 'UHigh', 2.5, 27, null, null, 1200, null, 'you should accept me.', 'University of Illinois', 'Network Security', true, null);
+insert into linkedu.STUDENT values ('stu1', 'stu1', default, 'stu1@school.edu', 'Student', 'One',4, 'Normal Community', 4.0, 36, null, null, null, 'Calc;Computer Science', 'I am awesome.', 'MIT', 'Computer Engineering', true, null);
+insert into linkedu.STUDENT values ('stu2', 'stu2', default, 'stu2@school.edu', 'Student', 'Two',3, 'Normal West', 3.8, 32, 1200, null, null, 'Calc;Computer Science;English', 'I am better than everyone else.', 'Illinois State University', 'Computer Science', false, null);
+insert into linkedu.STUDENT values ('stu3', 'stu3', default, 'stu3@school.edu', 'Student', 'Three',1, 'UHigh', 2.5, 27, null, null, 1200, null, 'you should accept me.', 'University of Illinois', 'Network Security', true, null);
 
 --insert into university table
 insert into linkedu.UNIVERSITY values('univ1', 'univ1', default, 'MIT', 11301, 'M;W;F', '77 Massachussetts Ave', 'Cambridge', 'MA', '02139', 'school@mit.edu', true);

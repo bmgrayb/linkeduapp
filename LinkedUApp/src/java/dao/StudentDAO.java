@@ -6,13 +6,15 @@
 package dao;
 
 import java.util.ArrayList;
+import model.StudentModel;
 
 /**
  *
  * @author brando
  */
 public interface StudentDAO {
-    public ArrayList<Student> getAllStudents();
-    public Student getStudentByID(int id);
-    public ArrayList<Student> getStudentsWithGreaterGPA(double gpa);
+    public ArrayList<StudentModel> getAllStudents();
+    public StudentModel getStudentByID(int id);
+    public ArrayList<StudentModel> getStudentsWithGreaterGPA(double gpa);
+    public int addStudent(StudentModel stu);
 }

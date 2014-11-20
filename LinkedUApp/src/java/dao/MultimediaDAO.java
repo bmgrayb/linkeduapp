@@ -6,12 +6,14 @@
 package dao;
 
 import java.util.ArrayList;
+import model.MultimediaModel;
 
 /**
  *
  * @author brando
  */
 public interface MultimediaDAO {
-    public ArrayList<String> getAllURL();
-    public String getURLByID(int studentID);
+    public ArrayList<MultimediaModel> getAllURL();
+    public ArrayList<MultimediaModel> getURLByID(int studentID);
+    public int addMultimedia(MultimediaModel mult);
 }

@@ -6,12 +6,14 @@
 package dao;
 
 import java.util.ArrayList;
+import model.RecruiterModel;
 
 /**
  *
  * @author brando
  */
 public interface RecruiterDAO {
-    ArrayList<Recruiter> getAllRecruiters();
-    Recruiter getRecruiterByID(int id);
+    ArrayList<RecruiterModel> getAllRecruiters();
+    RecruiterModel getRecruiterByID(int id);
+    public int addRecruiter(RecruiterModel rec);
 }
