@@ -18,5 +18,6 @@ public interface AppointmentDAO {
     public ArrayList<AppointmentModel> getUniversityAppointments(int univID);
     public ArrayList<AppointmentModel> getStudentAppointments(int stuID);
     public AppointmentModel getAppointment(int studentID, int universityID, Date date);
+    public int updateAppointment(AppointmentModel appt);
     public int addAppointment(AppointmentModel appt);
 }
