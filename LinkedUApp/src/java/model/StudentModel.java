@@ -78,8 +78,28 @@ public class StudentModel {
     /**
      * @return the highSchool
      */
+    /*
+                            <f:selectItem itemValue="1" itemLabel="Bloomington High School" />
+                            <f:selectItem itemValue="2" itemLabel="Calvary Baptist High School" />
+                            <f:selectItem itemValue="3" itemLabel="Central Catholic High School" />
+                            <f:selectItem itemValue="4" itemLabel="Normal Community High School" />
+                            <f:selectItem itemValue="5" itemLabel="Normal Community West High School" />
+                            <f:selectItem itemValue="6" itemLabel="University High School" />
+    */
     public String getHighSchool() {
-        return highSchool;
+
+            if("1".equals(highSchool))
+                return "Bloomington High School";
+            else if("2".equals(highSchool))
+                return "Calvary Baptist High School";
+            else if("3".equals(highSchool))
+                return "Central Catholic High School";
+            else if("4".equals(highSchool))
+                return "Normal Community High School";
+            else if("5".equals(highSchool))
+                return "Normal Community West High School";
+            else 
+                return "University High School";
     }
 
     /**
@@ -267,8 +287,17 @@ public class StudentModel {
     /**
      * @return the year
      */
-    public int getYear() {
-        return year;
+    public String getYear() {
+        if(year == 1)
+            return "Freshman";
+        if(year == 2)
+            return "Sophomore";
+        if(year == 3)
+            return "Junior";
+        if(year == 4)
+            return "Senior";
+        else
+            return "All the years";
     }
 
     /**
