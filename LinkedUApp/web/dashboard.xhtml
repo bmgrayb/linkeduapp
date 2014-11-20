@@ -30,9 +30,9 @@
                         <p>Normal Community High School</p>
                         <p>GPA: 3.8</p>
                         <p>Interested Majors: Computer Science, Human Resources, Arts Technology</p>
-                        <h:outputText id="firstName" escape="false" value="#{userController.theUserModel.firstName}"/>                       
-                        <h:outputText id="lastName" escape="false" value="#{userController.theUserModel.lastName}"/>  
-                        </div>
+             <h1>       <h:outputText id="firstName" escape="false" value="#{studentController.theUserModel.firstName}"/>                       
+                        <h:outputText id="lastName" escape="false" value="#{studentController.theUserModel.lastName}"/>  
+             </h1>           </div>
     
                 </div>
                 <div class="col33">
@@ -45,6 +45,10 @@
 
                     <div class="profile-section">
                         <h2>Summary</h2>
+                        <p>
+                            High School: <h:outputText id="highSchool" escape="false" value="#{studentController.theUserModel.highSchool}"/>
+                            Year: <h:outputText id="year" escape="false" value="#{studentController.theUserModel.year}"/>
+                        </p>
                         <p>Sonny John Moore (born January 15, 1988), better known by his stage name Skrillex, is an electronic dance music producer, DJ, and singer-songwriter.</p>                          
                     </div>
                     
