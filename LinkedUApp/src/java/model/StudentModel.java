@@ -10,11 +10,11 @@ package model;
  * @author chris
  */
 public class StudentModel {
-    private String username,password, email, firstName, lastName, highSchool, year;
+    private String username,password, email, firstName, lastName, highSchool, dashYear;
     private String essay, apCourse, universities, majors;
     private boolean isPaidService;
     private float gpa;
-    private int studentID, ACT, SAT, PSAT, NMSQT;// year;
+    private int studentID, ACT, SAT, PSAT, NMSQT, year;
     //Add in the picture as blob object.
   //  private String[] majors;
   //  private String[] universities;
@@ -287,23 +287,31 @@ public class StudentModel {
     /**
      * @return the year
      */
-    public String getYear() {
-        if("1".equals(year))
+    public String getDashYear() {
+        if(year == 1)
             return "Freshman";
-        if("2".equals(year))
+        if(year == 2)
             return "Sophomore";
-        if("3".equals(year))
+        if(year == 3)
             return "Junior";
-        if("4".equals(year))
+        if(year == 4)
             return "Senior";
         else
             return "All the years";
+    }
+    
+    public void setDashYear(String x){
+        dashYear = x;
+    }
+    
+    public int getYear(){
+        return year;
     }
 
     /**
      * @param year the year to set
      */
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 }
