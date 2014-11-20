@@ -13,10 +13,10 @@
                 <li style="padding-top: 13px;">
                  <h:form id="search">
                     <h:inputText id="search" value="#{userController.theUserModel.firstName}" class="join-field"></h:inputText>
-                    <img src="../images/search.png" alt="Search"/>
                  </h:form>
                 </li>
-                <li><h:commandButton id="editStudentButton" value="Edit Profile" action="#{recruiterController.addRecruiter()}" class="edit-button"/></li>
+                <li style="padding-left: 0;"><img src="../images/search.png" alt="Search"/></li>
+                <li style="padding-top: 13px;"><h:commandButton id="editStudentButton" value="Edit Profile" action="#{recruiterController.addRecruiter()}" class="edit-button"/></li>
             </ul>
         </div>
         
@@ -26,13 +26,12 @@
             
                         <img src="images/skrillex.jpg" alt="Skrillex" class="dash-pic"/>
                         <div style="margin-left: 220px;">
-                        <h1>Sonny Moore</h1>
+                        <h1><h:outputText id="firstName" escape="false" value="#{studentController.theUserModel.firstName}"/>&nbsp;                       
+                        <h:outputText id="lastName" escape="false" value="#{studentController.theUserModel.lastName}"/></h1>
                         <p>Normal Community High School</p>
                         <p>GPA: 3.8</p>
                         <p>Interested Majors: Computer Science, Human Resources, Arts Technology</p>
-             <h1>       <h:outputText id="firstName" escape="false" value="#{studentController.theUserModel.firstName}"/>                       
-                        <h:outputText id="lastName" escape="false" value="#{studentController.theUserModel.lastName}"/>  
-             </h1>           </div>
+                </div>
     
                 </div>
                 <div class="col33">
