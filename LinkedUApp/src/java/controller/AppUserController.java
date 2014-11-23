@@ -59,13 +59,30 @@ public class AppUserController
         this.theModel = theModel;
     }
     
-    public String validate()
+    public String getPage()
+    {
+        if(validate())
+        {
+            /*if(theModel.getType()=="student")
+            {return "student.xhtml";}
+            else
+            {return "recruiter.xhtml";}*/
+            return "student.xhtml";
+        }
+        else
+        {
+            return "error.xhtml";
+        }
+    }
+    
+    public boolean validate()
     {
         AppUserDAO apd = new AppUserDAOImpl();
+        apd.addUser(theModel);
         if(apd.validate(theModel.getUsername(), theModel.getPassword()))
-        {return "Valid information";}
+        {return true;}
         else
-        {return "Invalid information";}
+        {return false;}
     }
     
     public String addAppUser()
