@@ -83,4 +83,39 @@ public class AppUserDAOImpl implements AppUserDAO{
         return row;
     }
     
+    @Override
+    public String getUserType(String username) {
+        boolean valid = false;
+        
+        DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
+        String myDB = "jdbc:derby://localhost:1527/linkedu";
+        Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
+
+        String query = "SELECT usertype FROM LINKEDU.UNIVERSITY WHERE USERNAME = '" + username + "'";
+        String type="";
+        
+        try{
+            Statement stmt = DBConn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+           
+            while(rs.next()){
+                type = rs.getString("usertype");
+            } 
+            rs.close();
+            stmt.close();
+            
+        } catch (Exception e) {
+            System.err.println("ERROR: Problems with SQL select");
+            e.printStackTrace();
+        }
+        try {
+            DBConn.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+        
+        return type;
+    }
+    
 }
