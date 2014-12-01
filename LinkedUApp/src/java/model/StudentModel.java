@@ -15,6 +15,7 @@ public class StudentModel {
     private boolean isPaidService;
     private float gpa;
     private int studentID, ACT, SAT, PSAT, NMSQT, year;
+    private String yearString;
     //Add in the picture as blob object.
   //  private String[] majors;
   //  private String[] universities;
@@ -287,23 +288,34 @@ public class StudentModel {
     /**
      * @return the year
      */
-    public String getYear() {
+    public String getYearString() {
         if(year == 1)
-            return "Freshman";
+            return "Freshmen";
         if(year == 2)
             return "Sophomore";
-        if(year == 3)
+        if(year == 3) 
             return "Junior";
         if(year == 4)
             return "Senior";
-        else
-            return "All the years";
+        
+        return "All years";
     }
 
+    public int getYear(){
+        return year;
+    }
+    
+    public void setYear(int year){
+        this.year = year;
+    }
+    
     /**
      * @param year the year to set
      */
-    public void setYear(int year) {
-        this.year = year;
+    public void setYearString(String year) {
+        this.yearString = year;
+        this.year = Integer.parseInt(year);
     }
+
+   
 }
