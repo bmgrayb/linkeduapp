@@ -25,7 +25,7 @@ public class AppUserDAOImpl implements AppUserDAO{
         String myDB = "jdbc:derby://localhost:1527/linkedu";
         Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
 
-        String query = "SELECT PASSWORD FROM LINKEDU.UNIVERSITY WHERE USERNAME = '" + username + "'";
+        String query = "SELECT PASSWORD FROM LINKEDU.APPUSER WHERE USERNAME = '" + username + "'";
         String newPassword="";
         
         try{
