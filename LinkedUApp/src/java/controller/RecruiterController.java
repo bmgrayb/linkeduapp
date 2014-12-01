@@ -10,6 +10,9 @@ import dao.RecruiterDAOImpl;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import model.RecruiterModel;
+import model.AppUserModel;
+import dao.AppUserDAO;
+import dao.AppUserDAOImpl;
 
 /**
  *
@@ -63,6 +66,11 @@ public class RecruiterController {
     public String addRecruiter(){
         RecruiterDAO recDAO = new RecruiterDAOImpl();
         int status = recDAO.addRecruiter(theModel);
+        AppUserDAO aUserDAO= new AppUserDAOImpl();
+        AppUserModel tempModel=new AppUserModel();
+        tempModel.setUsername(theModel.getUsername());
+        tempModel.setPassword(theModel.getPassword());
+        aUserDAO.addUser(tempModel);
         if(status == 1)
             return "dashboard.xhtml";
         return "error.xhtml";
