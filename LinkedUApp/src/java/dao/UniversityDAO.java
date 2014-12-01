@@ -15,6 +15,8 @@ import model.UniversityModel;
 public interface UniversityDAO {
     public ArrayList<UniversityModel> getAllUniversities();
     public UniversityModel getUniversityByID(int id);
+    public UniversityModel getUniversityByUsername(String un);
+    public ArrayList<UniversityModel> getUniversitesByState(String state);
     public ArrayList<UniversityModel> getUniversitiesEnrollmentGreater(int enrollment);
     public ArrayList<UniversityModel> getUniversitiesEnrollmentSmaller(int enrollment);
     public ArrayList<UniversityModel> getShowcasedUniversities();

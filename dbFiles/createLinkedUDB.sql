@@ -8,6 +8,7 @@ drop table linkedu.Multimedia;
 create table linkedu.AppUser(
 	username		varchar(25) not null,
 	password		varchar(25) not null,
+        userType                varchar(25),
 	primary key(username)
 );
 
@@ -18,7 +19,7 @@ create table linkedu.Student(
         email                   varchar(25),
         firstName               varchar(25),
         lastName                varchar(25),
-        schoolYear              integer,
+        classYear               integer,
         highSchool              varchar(25),
         gpa                     decimal(3,2),
         actScore                integer,

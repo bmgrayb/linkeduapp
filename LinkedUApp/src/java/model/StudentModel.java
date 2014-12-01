@@ -10,7 +10,7 @@ package model;
  * @author chris
  */
 public class StudentModel {
-    private String username,password, email, firstName, lastName, highSchool;
+    private String username,password, email, firstName, lastName, highSchool, dashYear;
     private String essay, apCourse, universities, majors;
     private boolean isPaidService;
     private float gpa;
@@ -288,7 +288,11 @@ public class StudentModel {
     /**
      * @return the year
      */
+<<<<<<< HEAD
     public String getYearString() {
+=======
+    public String getDashYear() {
+>>>>>>> 5d7b1c9fd38baceb00206c3782763f3ce40f0caa
         if(year == 1)
             return "Freshmen";
         if(year == 2)
@@ -299,6 +303,14 @@ public class StudentModel {
             return "Senior";
         
         return "All years";
+    }
+    
+    public void setDashYear(String x){
+        dashYear = x;
+    }
+    
+    public int getYear(){
+        return year;
     }
 
     public int getYear(){

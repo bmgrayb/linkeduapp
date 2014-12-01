@@ -15,7 +15,9 @@ import model.StudentModel;
 public interface StudentDAO {
     public ArrayList<StudentModel> getAllStudents();
     public StudentModel getStudentByID(int id);
+    public StudentModel getStudentByUsername(String un);
     public ArrayList<StudentModel> getStudentsWithGreaterGPA(double gpa);
+    public ArrayList<StudentModel> getStudentsByYear(int year);
     public int updateStudent(StudentModel stu);
     public int addStudent(StudentModel stu);
 }

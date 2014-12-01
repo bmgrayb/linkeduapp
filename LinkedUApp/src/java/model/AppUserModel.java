@@ -10,7 +10,7 @@ package model;
  * @author chris
  */
 public class AppUserModel {
-    private String username, password;
+    private String username, password, userType;
 
     /**
      * @return the username
@@ -38,5 +38,19 @@ public class AppUserModel {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the userType
+     */
+    public String getUserType() {
+        return userType;
+    }
+
+    /**
+     * @param userType the userType to set
+     */
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

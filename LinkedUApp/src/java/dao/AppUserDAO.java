@@ -16,4 +16,6 @@ public interface AppUserDAO {
     public boolean validate(String username, String password);
     //this method will return 1 if the row is created sucessfully
     public int addUser(AppUserModel user);
+    //this method will return the type of the user passed in
+    public String getUserType(String username);
 }

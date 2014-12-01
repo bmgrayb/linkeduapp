@@ -13,8 +13,9 @@ import model.RecruiterModel;
  * @author brando
  */
 public interface RecruiterDAO {
-    ArrayList<RecruiterModel> getAllRecruiters();
-    RecruiterModel getRecruiterByID(int id);
+    public ArrayList<RecruiterModel> getAllRecruiters();
+    public RecruiterModel getRecruiterByID(int id);
+    public RecruiterModel getRecruiterByUsername(String username);
     public int updateRecruiter(RecruiterModel rec);
     public int addRecruiter(RecruiterModel rec);
 }
