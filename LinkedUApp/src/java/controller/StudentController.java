@@ -10,6 +10,9 @@ import dao.StudentDAOImpl;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import model.StudentModel;
+import model.AppUserModel;
+import dao.AppUserDAO;
+import dao.AppUserDAOImpl;
 
 /**
  *
@@ -62,6 +65,11 @@ public class StudentController {
     public String addStudent(){
         StudentDAO aStudentDAO = new StudentDAOImpl();
         int status = aStudentDAO.addStudent(theUserModel);
+        AppUserDAO aUserDAO= new AppUserDAOImpl();
+        AppUserModel tempModel=new AppUserModel();
+        tempModel.setUsername(theUserModel.getUsername());
+        tempModel.setPassword(theUserModel.getPassword());
+        aUserDAO.addUser(tempModel);
         if (status == 1)
             return "dashboard.xhtml";
         else return "error.xhml";
