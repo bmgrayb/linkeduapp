@@ -14,6 +14,15 @@
                     <file>${file.reference.javax.faces.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
+<<<<<<< HEAD
+=======
+                <library dirs="200">
+                    <file>${file.reference.glassfish-4.1-glassfish}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.javax.faces.jar-1}</file>
+                </library>
+>>>>>>> origin/master
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
