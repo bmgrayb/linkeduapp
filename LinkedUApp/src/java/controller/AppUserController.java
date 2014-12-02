@@ -61,7 +61,7 @@ public class AppUserController
     
     private boolean checkLoggedIn()
     {
-        if(theModel.getUsername()!=null && theModel.getUsername().length()<0)
+        if(theModel.getUsername()!=null && theModel.getUsername().length()>0)
         {return true;}
         else
         {return false;}
