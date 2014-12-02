@@ -19,10 +19,13 @@
                 </library>
                 <library dirs="200">
                     <file>${file.reference.javax.faces.jar-1}</file>
+<<<<<<< HEAD
                 </library>
                 <library dirs="200">
                     <file>${file.reference.javax.mail.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
+=======
+>>>>>>> 2022db6ff08b893a1bc8f1b903680b8ccc836cd2
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
