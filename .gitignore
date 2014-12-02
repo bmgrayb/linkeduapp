@@ -2,3 +2,8 @@
 *.class
 /LinkedUApp/dist/
 /LinkedUApp/nbproject/build-impl.xml
+
+# Package Files #
+*.jar
+*.war
+*.ear
