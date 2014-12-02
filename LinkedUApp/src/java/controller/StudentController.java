@@ -13,6 +13,11 @@ import model.StudentModel;
 import model.AppUserModel;
 import dao.AppUserDAO;
 import dao.AppUserDAOImpl;
+import dao.RecruiterDAO;
+import dao.RecruiterDAOImpl;
+import dao.UniversityDAO;
+import dao.UniversityDAOImpl;
+import model.RecruiterModel;
 
 /**
  *
@@ -74,4 +79,24 @@ public class StudentController {
             return "dashboard.xhtml";
         else return "error.xhml";
     }//end create Student
+    
+    
+    public void requestInfoFromRecruiter(int recID){
+        StudentModel stu = this.getTheUserModel();
+        RecruiterDAO recDAO = new RecruiterDAOImpl();
+        RecruiterModel rec = recDAO.getRecruiterByID(recID);
+        UniversityDAO uDAO = new UniversityDAOImpl();
+        String uniName = uDAO.getUniversityByID(rec.getUniversityID()).getOfficalName();
+        
+        
+        String mailStr = "Hello "+rec.getFirstName()+" "+rec.getLastName()+",\n\n";
+        mailStr += "My name is "+stu.getFirstName()+" "+stu.getLastName()+" and I am interested ";
+        mailStr += "in getting more information about "+uniName+".\n\n";
+        mailStr += "Thanks,\n"+"   "+stu.getFirstName()+" "+stu.getLastName();
+        
+        String subject = "I would like to know more about your university.";
+        
+       // sendEmail(mailStr,stu.getEmail(),rec.getEmail(),subject);
+    }
+
 }//end class
