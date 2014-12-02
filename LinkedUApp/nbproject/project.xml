@@ -7,25 +7,15 @@
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries>
                 <library dirs="200">
-                    <file>${libs.primefaces.classpath}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
                     <file>${file.reference.javax.faces.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.glassfish-4.1-glassfish}</file>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.javax.faces.jar-1}</file>
-<<<<<<< HEAD
+                    <file>${libs.primefaces.classpath}</file>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.javax.mail.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
-=======
->>>>>>> 2022db6ff08b893a1bc8f1b903680b8ccc836cd2
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
