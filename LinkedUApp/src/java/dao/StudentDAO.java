@@ -18,6 +18,11 @@ public interface StudentDAO {
     public StudentModel getStudentByUsername(String un);
     public ArrayList<StudentModel> getStudentsWithGreaterGPA(double gpa);
     public ArrayList<StudentModel> getStudentsByYear(int year);
+    
+    //TODO: implement
+    public ArrayList<StudentModel> getStudentsGPARange(double lower, double higher);
+    public ArrayList<StudentModel> getStudentGPARangeAndYear(int year, double lower, double higher);
+    
     public int updateStudent(StudentModel stu);
     public int addStudent(StudentModel stu);
 }
