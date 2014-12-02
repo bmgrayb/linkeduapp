@@ -23,11 +23,11 @@
             <div id="signin">
                 <img src="images/linkedu.png"/>            
                 <h:form id="loginForm">
-                   <h:inputText id="login" class="main-field"></h:inputText><br/>
+                   <h:inputText id="login" class="main-field" value="#{appUserController.theModel.username}"></h:inputText><br/>
                    <p:watermark for="login" value="User Name" />  
-                   <h:inputSecret id="pw" class="main-field"></h:inputSecret><br/>
+                   <h:inputSecret id="pw" class="main-field" value="#{appUserController.theModel.password}"></h:inputSecret><br/>
                    <p:watermark for="pw" value="Password" />  
-                   <h:commandButton id="loginbutton" value="Login" class="main-login-button"/>
+                   <h:commandButton id="loginbutton" value="Login" class="main-login-button"action="#{appUserController.login()}"/>
                </h:form>
                <p>High school student? <a href="join.xhtml">Join now</a></p>
             </div>

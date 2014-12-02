@@ -47,7 +47,7 @@ public class RecruiterController {
      */
     public String getResponse() {
         String str = "";
-        str += "Hello Student:\nUsername: " + theModel.getUsername();
+        str += "Hello Recruiter:\nUsername: " + theModel.getUsername();
         str += "\nName: "+theModel.getFirstName() + " " + theModel.getLastName();
         str += "\nUniversity ID: "+theModel.getUniversityID();
         str += "\nEmail: "+theModel.getEmail() + "\nPassword: "+theModel.getPassword();
