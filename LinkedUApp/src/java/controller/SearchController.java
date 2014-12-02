@@ -10,6 +10,8 @@ import dao.StudentDAOImpl;
 import dao.UniversityDAO;
 import dao.UniversityDAOImpl;
 import java.util.ArrayList;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import model.StudentModel;
 import model.UniversityModel;
 
@@ -17,6 +19,8 @@ import model.UniversityModel;
  *
  * @author chris
  */
+@ManagedBean
+@SessionScoped
 public class SearchController {
     
     private String searchType, state;
