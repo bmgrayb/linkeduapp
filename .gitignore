@@ -1,2 +1,4 @@
 *.DS_Store
+*.class
 /LinkedUApp/dist/
+/LinkedUApp/nbproject/build-impl.xml

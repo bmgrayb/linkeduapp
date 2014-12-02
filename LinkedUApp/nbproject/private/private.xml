@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/dao/AppUserDAO.java</file>
-            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/dao/AppUserDAOImpl.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/error.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/join.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/nbproject/build-impl.xml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/index.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/recruit.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/controller/RecruiterController.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/model/StudentModel.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/dashboard.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/css/style.css</file>
         </group>
     </open-files>
 </project-private>
