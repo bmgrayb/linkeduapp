@@ -20,6 +20,7 @@ import dao.StudentDAOImpl;
 import dao.UniversityDAO;
 import dao.UniversityDAOImpl;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Properties;
 import model.AppointmentModel;
 import javax.mail.Message;
@@ -30,6 +31,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import model.StudentModel;
 import model.UniversityModel;
+import java.util.Random;
 
 /**
  *
@@ -80,6 +82,21 @@ public class RecruiterController {
         this.response = response;
     }
     
+    public String getHighlightedUniversity()
+    {
+        UniversityDAO uDAO=new UniversityDAOImpl();
+        ArrayList<UniversityModel> aList=uDAO.getShowcasedUniversities();
+        Random rng=new Random();
+        int anIndex=rng.nextInt(aList.size());
+        UniversityModel aModel=aList.get(anIndex);
+        String str="";
+        str+=aModel.getOfficalName() + " is located in ";
+        str+=aModel.getAddress() + "\n";
+        str+=aModel.getCity() +"," + aModel.getStAbbr() + " " + aModel.getZip();
+        str+=".\n The availability is " + aModel.getAvailability();
+        return str;
+    }
+    
     public String addRecruiter(){
         RecruiterDAO recDAO = new RecruiterDAOImpl();
         int status = recDAO.addRecruiter(theModel);
@@ -87,9 +104,10 @@ public class RecruiterController {
         AppUserModel tempModel=new AppUserModel();
         tempModel.setUsername(theModel.getUsername());
         tempModel.setPassword(theModel.getPassword());
+        tempModel.setUserType("recruiter");
         aUserDAO.addUser(tempModel);
         if(status == 1)
-            return "dashboard.xhtml";
+            return "dashboard-recruiter.xhtml";
         return "error.xhtml";
     }
     

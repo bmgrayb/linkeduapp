@@ -70,6 +70,7 @@ public class AppUserDAOImpl implements AppUserDAO{
             insertString = "INSERT INTO linkedu.AppUser values('"
             + user.getUsername()
             + "','" + user.getPassword()
+            + "','" + user.getUserType()
             +"')";
             
             row = stmt.executeUpdate(insertString);

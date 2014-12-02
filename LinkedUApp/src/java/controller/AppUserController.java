@@ -71,11 +71,13 @@ public class AppUserController
     {
         if(validate())
         {
-            /*if(theModel.getType()=="student")
-            {return "student.xhtml";}
+            AppUserDAO apd=new AppUserDAOImpl();
+            System.out.println("1" + apd.getUserType(theModel.getUsername()));
+            if(apd.getUserType(theModel.getUsername()).equals("student"))
+            {return "dashboard.xhtml";}
             else
-            {return "recruiter.xhtml";}*/
-            return "dashboard.xhtml";
+            {return "dashboard-recruiter.xhtml";}
+            //return "dashboard.xhtml";
         }
         else
         {

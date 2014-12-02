@@ -74,6 +74,7 @@ public class StudentController {
         AppUserModel tempModel=new AppUserModel();
         tempModel.setUsername(theUserModel.getUsername());
         tempModel.setPassword(theUserModel.getPassword());
+        tempModel.setUserType("student");
         aUserDAO.addUser(tempModel);
         if (status == 1)
             return "dashboard.xhtml";
