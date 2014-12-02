@@ -2,17 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/error.xhtml</file>
             <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/join.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/nbproject/build-impl.xml</file>
             <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/index.xhtml</file>
             <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/recruit.xhtml</file>
-            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/dao/StudentDAOImpl.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/controller/RecruiterController.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/model/StudentModel.java</file>
             <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/dashboard.xhtml</file>
             <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/css/style.css</file>
         </group>
->>>>>>> 307386d59fb20b0cb34c9165b1a607d1a5d9e0bd
     </open-files>
 </project-private>

@@ -17,8 +17,15 @@ public interface UniversityDAO {
     public UniversityModel getUniversityByID(int id);
     public UniversityModel getUniversityByUsername(String un);
     public ArrayList<UniversityModel> getUniversitesByState(String state);
+    //deprecated
     public ArrayList<UniversityModel> getUniversitiesEnrollmentGreater(int enrollment);
+    //deprecated
     public ArrayList<UniversityModel> getUniversitiesEnrollmentSmaller(int enrollment);
+    
+    //TODO: Implement 
+    public ArrayList<UniversityModel> getUniversitiesBetween(int lower, int higher);
+    public ArrayList<UniversityModel> getUniversitiesByStateAndRange(String state, int lower, int higher);
+    
     public ArrayList<UniversityModel> getShowcasedUniversities();
     public int updateUniversity(UniversityModel unit);
     public int addUniversity(UniversityModel univ);
