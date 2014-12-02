@@ -33,7 +33,7 @@ public class AppUserController
     public String getResponse() {
         String str="";
         str+="Hello, your username is " + theModel.getUsername();
-        str+="\n Your password is " + theModel.getUsername();
+        str+="\n Your password is " + theModel.getPassword();
         response=str;
         return response;
     }
@@ -59,7 +59,15 @@ public class AppUserController
         this.theModel = theModel;
     }
     
-    public String getPage()
+    private boolean checkLoggedIn()
+    {
+        if(theModel.getUsername()!=null && theModel.getUsername().length()>0)
+        {return true;}
+        else
+        {return false;}
+    }
+    
+    public String login()
     {
         if(validate())
         {
@@ -67,7 +75,7 @@ public class AppUserController
             {return "student.xhtml";}
             else
             {return "recruiter.xhtml";}*/
-            return "student.xhtml";
+            return "dashboard.xhtml";
         }
         else
         {
@@ -78,11 +86,17 @@ public class AppUserController
     public boolean validate()
     {
         AppUserDAO apd = new AppUserDAOImpl();
-        apd.addUser(theModel);
-        if(apd.validate(theModel.getUsername(), theModel.getPassword()))
-        {return true;}
+        if(checkLoggedIn())
+        {
+            if(apd.validate(theModel.getUsername(), theModel.getPassword()))
+            {return true;}
+            else
+            {return false;}
+        }
         else
-        {return false;}
+        {
+            return false;
+        }
     }
     
     public String addAppUser()
