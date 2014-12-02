@@ -31,7 +31,6 @@ import javax.mail.internet.MimeMessage;
 import model.StudentModel;
 import model.UniversityModel;
 
-
 /**
  *
  * @author chris
@@ -94,6 +93,29 @@ public class RecruiterController {
         return "error.xhtml";
     }
     
+
+    public void requestInfoFromStudent(int stuID){
+        StudentModel student; RecruiterModel rec;
+        StudentDAO stuDAO = new StudentDAOImpl();
+        student = stuDAO.getStudentByID(stuID);
+        String stuEmail = student.getEmail();
+        rec = this.getTheModel();
+        String recEmail = rec.getEmail();
+        UniversityDAO uDAO = new UniversityDAOImpl();
+        String recUniversity = uDAO.getUniversityByID(rec.getUniversityID()).getOfficalName();
+        
+        String mailStr = "Hello "+student.getFirstName()+" "+student.getLastName()+",\n\n";
+        mailStr += "I am "+rec.getFirstName()+" "+rec.getLastName()+" from " + recUniversity+".\n";
+        mailStr += "We would like to talk to you about to learn more about you.\n\n";
+        mailStr += "Thanks,\n"+"   "+rec.getFirstName()+" "+rec.getLastName()+"\n";
+        mailStr += "   "+recUniversity;
+        
+        String subject = student.getFirstName()+"! We would like to know more about you!";
+        
+        sendEmail(mailStr,stuEmail,recEmail,subject);
+        
+    }//end requestFromStudent
+
     
     public void makeAppoinment(Date date, int stuId){
         
@@ -165,5 +187,5 @@ public class RecruiterController {
         }
         
     }
-    
+
 }
