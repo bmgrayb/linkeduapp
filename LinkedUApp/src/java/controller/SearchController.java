@@ -39,10 +39,10 @@ public class SearchController {
            UniversityDAO uDAO = new UniversityDAOImpl();
            
            if(enrollmentLow != -1 && state != null){
-             //  return uDAO.getUniversitiesByStateAndRange(state,enrollmentLow,enrollmentHigh);
+               return uDAO.getUniversitiesByStateAndRange(state,enrollmentLow,enrollmentHigh);
            }
            else if(enrollmentLow != -1){
-            //   return uDAO.getUniversitiesBetween(enrollmentLow,enrollmentHigh);
+               return uDAO.getUniversitiesBetween(enrollmentLow,enrollmentHigh);
            }
            else if(state != null){
                return uDAO.getUniversitesByState(state);
@@ -55,10 +55,10 @@ public class SearchController {
           StudentDAO stuDAO = new StudentDAOImpl();
           
           if(gpaLow != -1 && year != -1){
-            //  return stuDAO.getStudentGPARangeAndYear(year,gpaLow,gpaHigh);
+              return stuDAO.getStudentGPARangeAndYear(year,gpaLow,gpaHigh);
           }
           else if(gpaLow != -1){
-            //  return stuDAO.getStudentsGPARange(gpaLow,gpaHigh);
+              return stuDAO.getStudentsGPARange(gpaLow,gpaHigh);
           }
           else if(year != -1){
               return stuDAO.getStudentsByYear(year);
