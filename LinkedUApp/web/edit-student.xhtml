@@ -23,9 +23,10 @@
         <div id="profile">
             <div class="row">
                 <div class="col66" style="padding: 20px;">
-            
+                        
                         <img src="images/skrillex.jpg" alt="Skrillex" class="dash-pic"/>
                         <div style="margin-left: 220px;">
+                        <h:form>
                         <h1>
                             <h:inputText id="firstName" value="#{userController.theUserModel.firstName}"></h:inputText>                       
                             <h:inputText id="lastName" value="#{userController.theUserModel.firstName}"></h:inputText>  
@@ -34,6 +35,7 @@
                             <p>Year: <h:inputText id="year" value="#{userController.theUserModel.firstName}"></h:inputText></p>
                         <p>GPA: <h:inputText id="gpa" value="#{userController.theUserModel.firstName}"></h:inputText></p>
                         <p>Interested Majors: Computer Science, Human Resources, Arts Technology</p>
+                        </h:form>
                 </div>
     
                 </div>
@@ -46,11 +48,14 @@
                 <div class="col66">
 
                     <div class="profile-section">
+                        <h:form>
                         <h2>Summary</h2>
-                        <p><h:inputText id="summary" value="#{userController.theUserModel.firstName}"></h:inputText></p>                          
+                        <p><h:inputText id="summary" value="#{userController.theUserModel.firstName}"></h:inputText></p>  
+                        </h:form>
                     </div>
                     
                     <div class="profile-section">
+                        <h:form>
                         <h2>Test Scores</h2>
                         <h3>ACT</h3>
                         <p><h:inputText id="act" value="#{userController.theUserModel.firstName}"></h:inputText></p>
@@ -58,6 +63,7 @@
                         <p><h:inputText id="psat" value="#{userController.theUserModel.firstName}"></h:inputText></p>
                         <h3>NMSQT</h3>
                         <p><h:inputText id="nmsqt" value="#{userController.theUserModel.firstName}"></h:inputText></p>
+                        </h:form>
                     </div>
                     
                     <div class="profile-section">
@@ -76,19 +82,3 @@
         </div>
     </h:body>
 </html>
-
-<!-- 
-
-<h:form id="userForm">
-            First Name: <h:inputText id="firstName" value="#{userController.theUserModel.firstName}"></h:inputText><br/>
-            Last Name: <h:inputText id="lastName" value="#{userController.theUserModel.lastName}"></h:inputText><br/>
-            Password: <h:inputText id="password" value="#{userController.theLoginInfoModel.PASSWORD}"></h:inputText><br/>
-            Confirm Password: <h:inputText id="confirmPassword"></h:inputText><br/>
-            Email: <h:inputText id="email" value="#{userController.theUserModel.email}"></h:inputText><br/>
-            Security Question: <h:inputText id="securityQuestion" value="#{userController.theUserModel.securityQuestion}"></h:inputText><br/>
-            Security Answer: <h:inputText id="securityAnswer" value="#{userController.theUserModel.securityAnswer}"></h:inputText><br/>
-            <h:commandButton id="submitID" value="Submit Updates" action="#{userController.updateThis()}"/><br/>
-            <h:outputText value="#{userController.updateStatus}" id="updateStatus"/>
-        </h:form>
-
--->
