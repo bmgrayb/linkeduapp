@@ -7,6 +7,7 @@
         <link href="css/style.css" rel="stylesheet"/>
     </h:head>
     <h:body id="dashboard">
+        <!-- START NAVIGATION -->
         <div id="nav">
             <ul class="nav">
                 <li style="padding-top: 13px;"><a href="index.xhtml"><img src="../images/u.png" alt="LinkedU Logo"/></a></li>
@@ -19,11 +20,14 @@
                 <li style="padding-top: 10px;"><h:commandButton id="editStudentButton" value="Edit Profile" action="#{recruiterController.addRecruiter()}" class="edit-button"/></li>
             </ul>
         </div>
+        <!-- END NAVIGATION -->
         
-        <div id="profile">
+        
+        <!-- START PROFILE -->
+        <div id="profile-recruiter">
             <div class="row">
                 <div class="col66" style="padding: 20px;">
-            
+                    <h:form>
                         <img src="images/skrillex.jpg" alt="Skrillex" class="dash-pic"/>
                         <div style="margin-left: 220px;">
                         <h1>
@@ -31,43 +35,24 @@
                             <h:outputText id="lastName" escape="false" value="#{studentController.theUserModel.lastName}"/>  
                         </h1> 
                         <p>Summary:</p>
-                </div>
-    
-                </div>
-                <div class="col33">
-                    <h2>Mixtape</h2>
-                    <iframe src="//www.youtube.com/embed/3QSjfIeZ_Yo?rel=0" frameborder="0"></iframe>
+                        </div>
+                    </h:form>
                 </div>
             </div>
             <div class="row">
                 <div class="col66">
 
                     <div class="profile-section">
-                        <h2>Summary</h2>
-                        <p>Sonny John Moore (born January 15, 1988), better known by his stage name Skrillex, is an electronic dance music producer, DJ, and singer-songwriter.</p>                          
+                        <h2><h:outputText id="universityRepresented" escape="false" value="#{studentController.theUserModel.firstName}"/></h2>
+                        <p>Summary of University <h:outputText id="universitySummary" escape="false" value="#{studentController.theUserModel.firstName}"/></p>
                     </div>
                     
                     <div class="profile-section">
-                        <h2>Test Scores</h2>
-                        <h3>ACT</h3>
-                        <h3>PSAT</h3>
-                        <h3>NMSQT</h3>
+                        <h2>Make An Appointment!</h2>
+                 
                     </div>
-                    
-                    <div class="profile-section">
-                        <h2>AP Courses Taken</h2>
-                    </div>
-                    
-                    <div class="profile-section">
-                        <h2>College Essays</h2>
-                    </div>
-                </div>
-                <div class="col33">
-                    <h2>My Universities</h2>
-                    <h3>Featured University</h3>
                 </div>
             </div>
         </div>
     </h:body>
 </html>
-

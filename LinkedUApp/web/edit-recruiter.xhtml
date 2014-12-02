@@ -3,10 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Edit LinkedU Student</title>
+        <title>Dashboard LinkedU Recruiter</title>
         <link href="css/style.css" rel="stylesheet"/>
     </h:head>
     <h:body id="dashboard">
+        <!-- START NAVIGATION -->
         <div id="nav">
             <ul class="nav">
                 <li style="padding-top: 13px;"><a href="index.xhtml"><img src="../images/u.png" alt="LinkedU Logo"/></a></li>
@@ -16,67 +17,40 @@
                     </h:form>                    
                 </li>
                 <li><img src="../images/search.png" alt="Search"/></li>
-                <li style="padding-top: 10px;"><h:commandButton id="editStudentButton" value="Save Profile" action="#{recruiterController.addRecruiter()}" class="edit-button"/></li>
+                <li style="padding-top: 10px;"><h:commandButton id="editStudentButton" value="Edit Profile" action="#{recruiterController.addRecruiter()}" class="edit-button"/></li>
             </ul>
         </div>
+        <!-- END NAVIGATION -->
         
-        <div id="profile">
+        
+        <!-- START PROFILE -->
+        <div id="profile-recruiter">
             <div class="row">
                 <div class="col66" style="padding: 20px;">
-                        
+                    <h:form>
                         <img src="images/skrillex.jpg" alt="Skrillex" class="dash-pic"/>
                         <div style="margin-left: 220px;">
-                        <h:form>
                         <h1>
-                            <h:inputText id="firstName" value="#{userController.theUserModel.firstName}"></h:inputText>                       
-                            <h:inputText id="lastName" value="#{userController.theUserModel.firstName}"></h:inputText>  
+                            <h:inputText id="firstName" value="#{userController.theUserModel.firstName}"/>&nbsp;                       
+                            <h:inputText id="lastName" value="#{userController.theUserModel.firstName}"/>
                         </h1> 
-                            <p>High School: <h:inputText id="highSchool" value="#{userController.theUserModel.firstName}"></h:inputText></p>
-                            <p>Year: <h:inputText id="year" value="#{userController.theUserModel.firstName}"></h:inputText></p>
-                        <p>GPA: <h:inputText id="gpa" value="#{userController.theUserModel.firstName}"></h:inputText></p>
-                        <p>Interested Majors: Computer Science, Human Resources, Arts Technology</p>
-                        </h:form>
-                </div>
-    
-                </div>
-                <div class="col33">
-                    <h2>Mixtape</h2>
-                    <iframe src="//www.youtube.com/embed/3QSjfIeZ_Yo?rel=0" frameborder="0"></iframe>
+                        <p>Summary:</p>
+                        </div>
+                    </h:form>
                 </div>
             </div>
             <div class="row">
                 <div class="col66">
-
+                    <h:form>
                     <div class="profile-section">
-                        <h:form>
-                        <h2>Summary</h2>
-                        <p><h:inputText id="summary" value="#{userController.theUserModel.firstName}"></h:inputText></p>  
-                        </h:form>
+                        <h2>University</h2>
                     </div>
                     
                     <div class="profile-section">
-                        <h:form>
-                        <h2>Test Scores</h2>
-                        <h3>ACT</h3>
-                        <p><h:inputText id="act" value="#{userController.theUserModel.firstName}"></h:inputText></p>
-                        <h3>PSAT</h3>
-                        <p><h:inputText id="psat" value="#{userController.theUserModel.firstName}"></h:inputText></p>
-                        <h3>NMSQT</h3>
-                        <p><h:inputText id="nmsqt" value="#{userController.theUserModel.firstName}"></h:inputText></p>
-                        </h:form>
+                        <h2>Make An Appointment!</h2>
+                 
                     </div>
-                    
-                    <div class="profile-section">
-                        <h2>AP Courses Taken</h2>
-                    </div>
-                    
-                    <div class="profile-section">
-                        <h2>College Essays</h2>
-                    </div>
-                </div>
-                <div class="col33">
-                    <h2>My Universities</h2>
-                    <h3>Featured University</h3>
+                    </h:form>
                 </div>
             </div>
         </div>
