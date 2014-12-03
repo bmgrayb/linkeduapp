@@ -89,7 +89,15 @@ public class RecruiterController {
         tempModel.setPassword(theModel.getPassword());
         aUserDAO.addUser(tempModel);
         if(status == 1)
-            return "dashboard.xhtml";
+            return "dashboard-recruiter.xhtml";
+        return "error.xhtml";
+    }
+    
+    public String update(){
+        RecruiterDAO recDAO = new RecruiterDAOImpl();
+        int status = recDAO.updateRecruiter(theModel);
+        if(status == 1)
+            return "dashboard-recruiter.xhtml";
         return "error.xhtml";
     }
     
@@ -186,6 +194,12 @@ public class RecruiterController {
             mex.printStackTrace();
         }
         
+    }
+    
+    public String getUni(){
+        UniversityDAO uDAO = new UniversityDAOImpl();
+        UniversityModel uMod = uDAO.getUniversityByID(theModel.getUniversityID());
+        return uMod.getOfficalName();
     }
 
 }
