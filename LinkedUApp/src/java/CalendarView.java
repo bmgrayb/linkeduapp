@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package org.primefaces.showcase.view.input;
+// package org.primefaces.showcase.view.input;
 
 /**
  *
