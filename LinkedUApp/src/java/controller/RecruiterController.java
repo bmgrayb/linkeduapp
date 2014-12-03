@@ -20,7 +20,9 @@ import dao.StudentDAOImpl;
 import dao.UniversityDAO;
 import dao.UniversityDAOImpl;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Properties;
+import java.util.Random;
 import model.AppointmentModel;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -87,6 +89,7 @@ public class RecruiterController {
         AppUserModel tempModel=new AppUserModel();
         tempModel.setUsername(theModel.getUsername());
         tempModel.setPassword(theModel.getPassword());
+        tempModel.setUserType("recruiter");
         aUserDAO.addUser(tempModel);
         if(status == 1)
             return "dashboard-recruiter.xhtml";
@@ -200,6 +203,16 @@ public class RecruiterController {
         UniversityDAO uDAO = new UniversityDAOImpl();
         UniversityModel uMod = uDAO.getUniversityByID(theModel.getUniversityID());
         return uMod.getOfficalName();
+    }
+    
+    public UniversityModel getHighlightedUniversity()
+    {
+        UniversityDAO uDAO=new UniversityDAOImpl();
+        ArrayList<UniversityModel> aList=uDAO.getShowcasedUniversities();
+        Random rng=new Random();
+        int anIndex=rng.nextInt(aList.size());
+        UniversityModel aModel=aList.get(anIndex);
+        return aModel;
     }
 
 }
