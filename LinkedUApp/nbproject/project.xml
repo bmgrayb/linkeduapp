@@ -12,10 +12,6 @@
                 </library>
                 <library dirs="200">
                     <file>${libs.primefaces.classpath}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.primefaces-4.0.jar}</file>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.javax.mail.jar}</file>
@@ -23,10 +19,10 @@
                 </library>
                 <library dirs="200">
                     <file>${libs.PrimeFaces_4.0.classpath}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.primefaces-4.0.jar}</file>
+                    <file>${file.reference.primefaces-4.0.jar-1}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
