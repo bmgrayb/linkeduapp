@@ -11,8 +11,27 @@ and open the template in the editor.
     <head>
         <title>Apply to a University</title>
         <link href="css/style.css" rel="stylesheet"/>
+        <script>
+            function popup(){
+                alert("Thanks for your application!");
+            }
+        </script>
     </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+    <h:body id="join-student-bkgrd">
+    <img src="../images/linkedu-small.png" alt="LinkedU Logo" class="logo-top" style="margin: 10px;"/>
+    <div id="join-student">
+        <h1>Nice to meet you!</h1>
+        <p>Tell us a bit about yourself.</p>
+        <h:form id="joinStudentForm">
+            <div class="field-text">Name:</div>      <h:inputText id="firstName" value="#{applyController.applyModel.name}" class="join-field"></h:inputText><br/>
+            <div class="field-text">High School:</div>       <h:inputText id="lastName" value="#{applyController.applyModel.highSchool}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Year:</div>       <h:inputText id="userName" value="#{applyController.applyModel.year}" class="join-field"></h:inputText><br/>
+            <div class="field-text">ACT:</div>           <h:inputText id="actl" value="#{applyController.applyModel.actScore}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Your Email:</div>           <h:inputText id="email" value="#{applyController.applyModel.email}" class="join-field"></h:inputText><br/>
+            <div class="field-text">Recruiter Email:</div>           <h:inputText id="recemail" value="#{applyController.applyModel.recruiterEmail}" class="join-field"></h:inputText><br/>
+            <h:commandButton action="dashboard.xhtml" value="Back"/>
+            <h:commandButton onclick="popup()" action="#{applyController.apply}" value="Apply"/>
+        </h:form>
+    </div>
+    </h:body>
 </html>

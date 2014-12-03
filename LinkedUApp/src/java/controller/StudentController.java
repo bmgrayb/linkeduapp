@@ -122,6 +122,28 @@ public class StudentController {
         else return "error.xhtml";
     }
     
+    public void requestInfoFromStudent(){
+        StudentModel student; RecruiterModel rec;
+        StudentDAO stuDAO = new StudentDAOImpl();
+        student = stuDAO.getStudentByID(theUserModel.getStudentID());
+        String stuEmail = student.getEmail();
+        rec = new RecruiterDAOImpl().getRecruiterByID(100);
+        String recEmail = rec.getEmail();
+        UniversityDAO uDAO = new UniversityDAOImpl();
+        String recUniversity = uDAO.getUniversityByID(rec.getUniversityID()).getOfficalName();
+        
+        String mailStr = "Hello "+student.getFirstName()+" "+student.getLastName()+",\n\n";
+        mailStr += "I am "+rec.getFirstName()+" "+rec.getLastName()+" from " + recUniversity+".\n";
+        mailStr += "We would like to talk to you about to learn more about you.\n\n";
+        mailStr += "Thanks,\n"+"   "+rec.getFirstName()+" "+rec.getLastName()+"\n";
+        mailStr += "   "+recUniversity;
+        
+        String subject = student.getFirstName()+"! We would like to know more about you!";
+        
+        sendEmail(mailStr,stuEmail,recEmail,subject);
+        
+    }//end requestFromStudent
+    
     public void requestInfoFromRecruiter(int recID){
         StudentModel stu = this.getTheUserModel();
         RecruiterDAO recDAO = new RecruiterDAOImpl();
@@ -142,10 +164,18 @@ public class StudentController {
     
     private void sendEmail(String text, String toEmail, String fromEmail, String subject){        
          // Recipient's email ID needs to be mentioned.
-        String to = toEmail;
+       String to;
+        if(toEmail == null)
+            to = "bmgrayb@gmail.com";
+        else
+            to = toEmail;
         
         // Sender's email ID needs to be mentioned
-        String from = fromEmail;
+        String from;
+        if(fromEmail == null)
+            from="bmgrayb@ilstu.edu";
+        else
+            from = fromEmail;
 
         // Assuming you are sending email from this host
         String host = "smtp.ilstu.edu";

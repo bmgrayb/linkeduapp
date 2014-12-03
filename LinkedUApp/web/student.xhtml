@@ -14,6 +14,11 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="css/style.css" rel="stylesheet"/>
+        <script>
+            function popup(){
+                alert("Thanks for requesting more information! \n An email has been sent!");
+            }
+        </script>
     </h:head>
     
     <h:body id="dashboard">
@@ -28,6 +33,9 @@ and open the template in the editor.
                             <h:outputText id="firstName" escape="false" value="#{studentResultController.stu.firstName} "/>                       
                             <h:outputText id="lastName" escape="false" value="#{studentResultController.stu.lastName}"/>  
                         </h1> 
+                            <h:form>
+                                <h:commandButton onclick="popup()" value="Request Info!" action="#{studentController.requestInfoFromStudent()}"/>
+                            </h:form>
                             <p>High School: <h:outputText id="highSchool" escape="false" value="#{studentResultController.stu.highSchool}"/></p>
                             <p>Year: <h:outputText id="year" escape="false" value="#{studentResultController.stu.dashYear}"/></p>
                         <p>GPA: <h:outputText id="gpa" escape="false" value="#{studentResultController.stu.gpa}"/></p>

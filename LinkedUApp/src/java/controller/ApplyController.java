@@ -44,7 +44,7 @@ public class ApplyController {
         this.applyModel = applyModel;
     }
     
-    public void Apply(){
+    public void apply(){
         String body = getEmailBody();
         subject = applyModel.getName()+" would like to apply to your University";
         String sender = applyModel.getEmail();

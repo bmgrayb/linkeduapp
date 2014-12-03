@@ -5,10 +5,15 @@
  */
 package model;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 /**
  *
  * @author chris
  */
+@ManagedBean
+@SessionScoped
 public class ApplyModel {
     private String name,highSchool,year,actScore,satScore,email,recruiterEmail,essay;
     
