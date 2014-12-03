@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Search Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+
+        <h:form>
+            Search by: <br/>
+            <h:selectOneRadio value="#{searchController.searchType}" >
+                <f:selectItem  itemValue="Student" itemLabel="Student"/>
+                <f:selectItem itemValue="University" itemLabel="University"/>
+            </h:selectOneRadio>
+            <br/>
+            Student Criteria <br/>
+            <h:selectOneMenu id="classYear" value="#{searchController.year}" >
+                <f:selectItem itemValue="-1" itemLabel="Select Year"/>
+                <f:selectItem itemValue="1" itemLabel="Freshmen"/>
+                <f:selectItem itemValue="2" itemLabel="Sophomore"/>
+                <f:selectItem itemValue="3" itemLabel="Junior"/>
+                <f:selectItem itemValue="4" itemLabel="Senior"/>
+            </h:selectOneMenu><br/>
+            
+            <h:selectOneMenu id="gpaRange" value="#{searchController.gpaIndex}" >
+                <f:selectItem itemValue="-1" itemLabel="Select Range"/>
+                <f:selectItem itemValue="1" itemLabel="&lt; 3.0"/>
+                <f:selectItem itemValue="2" itemLabel="3.0 - 3.8"/>
+                <f:selectItem itemValue="3" itemLabel="3.8 - 4.0"/>
+            </h:selectOneMenu><br/><br/>
+            
+            University Criteria<br/>
+            <h:selectOneMenu id="stateAbbr" value="#{searchController.state}" >
+                <f:selectItem itemValue="-1" itemLabel="Select State"/>
+                <f:selectItem itemValue="CA" itemLabel="California"/>
+                <f:selectItem itemValue="IL" itemLabel="Illinois"/>
+                <f:selectItem itemValue="MA" itemLabel="MA"/>
+            </h:selectOneMenu><br/>
+            
+            <h:selectOneMenu id="enrollRange" value="#{searchController.enrollIndex}" >
+                <f:selectItem itemValue="-1" itemLabel="Select Range"/>
+                <f:selectItem itemValue="1" itemLabel="0 - 3,000"/>
+                <f:selectItem itemValue="2" itemLabel="3,000 - 30,000"/>
+                <f:selectItem itemValue="3" itemLabel="30,000 &gt; "/>
+            </h:selectOneMenu><br/><br/>
+            
+            <h:commandButton id="submitID" value="Search" action="results.xhtml" />
+        </h:form>
+        
+    </body>
+</html>
