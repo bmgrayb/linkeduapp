@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Dashboard LinkedU Recruiter</title>
         <link href="css/style.css" rel="stylesheet"/>
@@ -49,7 +51,55 @@
                     
                     <div class="profile-section">
                         <h2>Make An Appointment!</h2>
-                 
+                          <h:form id="appointment">
+                            <div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{studentController.theUserModel.firstName}" class="join-field"></h:inputText><br/>
+                            <div class="field-text">Last Name:</div>       <h:inputText id="lastName" value="#{studentController.theUserModel.lastName}" class="join-field"></h:inputText><br/>
+                            
+                            <div class="field-text">High School:</div>
+                                        <h:selectOneMenu value="#{studentController.theUserModel.highSchool}" class="field-drop">
+                                            <f:selectItem itemValue="1" itemLabel="Bloomington High School" />
+                                            <f:selectItem itemValue="2" itemLabel="Calvary Baptist High School" />
+                                            <f:selectItem itemValue="3" itemLabel="Central Catholic High School" />
+                                            <f:selectItem itemValue="4" itemLabel="Normal Community High School" />
+                                            <f:selectItem itemValue="5" itemLabel="Normal Community West High School" />
+                                            <f:selectItem itemValue="6" itemLabel="University High School" />
+                                        </h:selectOneMenu><br/><br/>
+                            <div class="field-text">Current Year:</div>
+                                        <h:selectOneMenu value="#{studentController.theUserModel.dashYear}" class="field-drop">
+                                            <f:selectItem itemValue="1" itemLabel="Freshman" />
+                                            <f:selectItem itemValue="2" itemLabel="Sophomore" />	   							
+                                            <f:selectItem itemValue="3" itemLabel="Junior" />
+                                            <f:selectItem itemValue="4" itemLabel="Senior" />	   							
+                                        </h:selectOneMenu><br/><br/>
+                            <div class="field-text">Email:</div>           <h:inputText id="email" value="#{studentController.theUserModel.email}" class="join-field"></h:inputText><br/>
+                            <p:growl id="msgs" showDetail="true" />
+ 
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    <p:outputLabel for="popup" value="Popup:" />
+                                    <p:calendar id="popup" value="#{calendarView.date2}" />
+
+                                    <p:outputLabel for="time" value="Time:" />
+                                    <p:calendar id="time" value="#{calendarView.date11}" pattern="HH:mm a" timeOnly="true"  />
+                                </h:panelGrid>
+
+                                <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                                    <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+                                        <h:outputText value="Popup:" />
+                                        <h:outputText value="#{calendarView.date2}">
+                                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                                        </h:outputText>
+
+                                        <h:outputText value="Time:" />
+                                        <h:outputText value="#{calendarView.date11}">
+                                            <f:convertDateTime pattern="HH:mm a" />
+                                        </h:outputText>
+                                    </p:panelGrid>
+                                </p:dialog>
+                            <h:commandButton id="submitID" value="Join" action="#{studentController.addStudent()}" class="join-button"/><br/>
+                            <p:commandButton value="Submit" value="Submit" update="msgs" actionListener="#{calendarView.click}" icon="ui-icon-check" class="join-button"/>
+
+                        </h:form>
                     </div>
                 </div>
             </div>
