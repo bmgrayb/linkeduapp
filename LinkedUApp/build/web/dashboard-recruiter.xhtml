@@ -43,11 +43,12 @@
             </div>
             <div class="row">
                 <div class="col66">
-
+                    <h:form>
                     <div class="profile-section">
                         <h2><h:outputText id="universityRepresented" escape="false" value="#{studentController.theUserModel.firstName}"/></h2>
                         <p>Summary of University <h:outputText id="universitySummary" escape="false" value="#{studentController.theUserModel.firstName}"/></p>
                     </div>
+                    </h:form>
                     
                     <div class="profile-section">
                         <h2>Make An Appointment!</h2>
@@ -96,8 +97,7 @@
                                         </h:outputText>
                                     </p:panelGrid>
                                 </p:dialog>
-                            <h:commandButton id="submitID" value="Join" action="#{studentController.addStudent()}" class="join-button"/><br/>
-                            <p:commandButton value="Submit" value="Submit" update="msgs" actionListener="#{calendarView.click}" icon="ui-icon-check" class="join-button"/>
+                            <p:commandButton value="Submit" update="msgs" actionListener="#{calendarView.click}" icon="ui-icon-check" class="join-button"/>
 
                         </h:form>
                     </div>
