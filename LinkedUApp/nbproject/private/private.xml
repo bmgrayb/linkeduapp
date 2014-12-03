@@ -6,10 +6,12 @@
             <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/web/dashboard.xhtml</file>
             <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/web/dashboard-recruiter.xhtml</file>
             <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/controller/StudentController.java</file>
+            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/web/recruit.xhtml</file>
             <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/controller/SearchController.java</file>
             <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/web/search.xhtml</file>
             <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/controller/RecruiterController.java</file>
             <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/controller/AppointmentController.java</file>
+            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/controller/AppUserController.java</file>
         </group>
     </open-files>
 </project-private>

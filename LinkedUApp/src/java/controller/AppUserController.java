@@ -79,8 +79,8 @@ public class AppUserController
         if(validate())
         {
             //AppUserDAO apd=new AppUserDAOImpl();
-            if(apd.getUserType(theModel.getUsername()).equals("student"))
-            //stu = new StudentDAOImpl().getStudentByUsername(theModel.getUsername());
+            //if(apd.getUserType(theModel.getUsername()).equals("student"))
+            stu = new StudentDAOImpl().getStudentByUsername(theModel.getUsername());
             if(theModel.getUserType().equalsIgnoreCase("Student"))
             {return "dashboard.xhtml";}
             else
@@ -91,14 +91,13 @@ public class AppUserController
         {
             return "error.xhtml";
         }
-        return "error.xhtml";
     }
     
     public boolean validate()
     {
         AppUserDAO apd = new AppUserDAOImpl();
-        if(checkLoggedIn())
-        //if(apd.validate(theModel.getUsername(), theModel.getPassword()))
+        //if(checkLoggedIn())
+        if(apd.validate(theModel.getUsername(), theModel.getPassword()))
         {
             /*if(apd.validate(theModel.getUsername(), theModel.getPassword()))
             {return true;}
