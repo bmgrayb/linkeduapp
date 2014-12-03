@@ -13,11 +13,14 @@ import model.StudentModel;
 import model.AppUserModel;
 import dao.AppUserDAO;
 import dao.AppUserDAOImpl;
+import dao.MultimediaDAOImpl;
 import dao.RecruiterDAO;
 import dao.RecruiterDAOImpl;
 import dao.UniversityDAO;
 import dao.UniversityDAOImpl;
+import java.util.ArrayList;
 import java.util.Properties;
+import javax.faces.event.ActionEvent;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -25,6 +28,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import model.RecruiterModel;
+import model.UniversityModel;
 
 /**
  *
@@ -35,11 +39,24 @@ import model.RecruiterModel;
 public class StudentController {
     private StudentModel theUserModel;
     private String response;
+    private String url;
+    private UniversityModel featured;
+    private ArrayList<UniversityModel> all;
+    int index;
     
     public StudentController(){
         theUserModel = new StudentModel();
+        all = new UniversityDAOImpl().getShowcasedUniversities();
+        url = null;
+        index = 0;
     }
 
+    public void setStudent(ActionEvent event){
+        String un = (String)event.getComponent().getAttributes().get("username");
+        theUserModel = new StudentDAOImpl().getStudentByUsername(un);
+        //url = new MultimediaDAOImpl().getURLByID(stu.getStudentID()).getUrl();
+    }
+    
     /**
      * @return the theUserModel
      */
@@ -81,10 +98,19 @@ public class StudentController {
         AppUserModel tempModel=new AppUserModel();
         tempModel.setUsername(theUserModel.getUsername());
         tempModel.setPassword(theUserModel.getPassword());
+/*<<<<<<< HEAD
         tempModel.setUserType("student");
         aUserDAO.addUser(tempModel);
         if (status == 1)
             return "dashboard.xhtml";
+=======*/
+        tempModel.setUserType("Student");
+        int other = aUserDAO.addUser(tempModel);
+        if (status == 1 && other == 1){
+            setTheUserModel(aStudentDAO.getStudentByUsername(theUserModel.getUsername()));
+          return "dashboard.xhtml";  
+        }
+            
         else return "error.xhml";
     }//end create Student
     
@@ -161,4 +187,40 @@ public class StudentController {
         }
         
     }//end send mail
+
+    /**
+     * @return the url
+     */
+    public String getUrl() {
+        if(url == null){
+            url = new MultimediaDAOImpl().getURLByID(theUserModel.getStudentID()).getUrl();
+        }
+        return url;
+    }
+
+    /**
+     * @param url the url to set
+     */
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    /**
+     * @return the featured
+     */
+    public UniversityModel getFeatured() {
+        //int index = (int)Math.random()*all.size();
+        return all.get(index);
+    }
+
+    public void changeFeatured(){
+        index = (index+1)%all.size();
+    }
+    
+    /**
+     * @param featured the featured to set
+     */
+    public void setFeatured(UniversityModel featured) {
+        this.featured = featured;
+    }
 }//end class

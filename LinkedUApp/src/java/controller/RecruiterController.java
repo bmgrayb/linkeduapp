@@ -23,6 +23,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Random;
+import javax.faces.event.ActionEvent;
 import model.AppointmentModel;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -42,9 +43,18 @@ import model.UniversityModel;
 public class RecruiterController {
     private RecruiterModel theModel;
     private String response;
+    private UniversityModel univ;
 
     public RecruiterController(){
         theModel = new RecruiterModel();
+        univ = null;
+    }
+    
+    public void setRecruiter(ActionEvent event){
+        String un = (String)event.getComponent().getAttributes().get("username");
+        theModel = new RecruiterDAOImpl().getRecruiterByUsername(un);
+        univ = new UniversityDAOImpl().getUniversityByID(theModel.getUniversityID());
+        //url = new MultimediaDAOImpl().getURLByID(stu.getStudentID()).getUrl();
     }
     
     /**
@@ -90,6 +100,7 @@ public class RecruiterController {
         tempModel.setUsername(theModel.getUsername());
         tempModel.setPassword(theModel.getPassword());
         tempModel.setUserType("recruiter");
+
         aUserDAO.addUser(tempModel);
         if(status == 1)
             return "dashboard-recruiter.xhtml";
@@ -99,6 +110,10 @@ public class RecruiterController {
     public String update(){
         RecruiterDAO recDAO = new RecruiterDAOImpl();
         int status = recDAO.updateRecruiter(theModel);
+        if(status == 1)
+            return "dashboard-recruiter.xhtml";
+        univ = new UniversityDAOImpl().getUniversityByID(theModel.getUniversityID());
+        //aUserDAO.addUser(tempModel);
         if(status == 1)
             return "dashboard-recruiter.xhtml";
         return "error.xhtml";
@@ -128,27 +143,26 @@ public class RecruiterController {
     }//end requestFromStudent
 
     
-    public void makeAppoinment(Date date, int stuId){
+    public void makeAppoinment(AppointmentModel appt){
         
-        AppointmentModel appt = new AppointmentModel();
+        /*AppointmentModel appt = new AppointmentModel();
         appt.setStudentID(stuId);
         appt.setVisitDate(date);
         appt.setUniversityID(this.getTheModel().getUniversityID());
-        
+        */
         AppointmentDAO apptDao = new AppointmentDAOImpl();
         StudentDAO stuDAO = new StudentDAOImpl();
         UniversityDAO univDAO = new UniversityDAOImpl();
         int status = apptDao.addAppointment(appt);
+        
         String message = "";
         
-        if(status == 1){
-            StudentModel stu = stuDAO.getStudentByID(stuId);
-            UniversityModel univ = univDAO.getUniversityByID(this.getTheModel().getUniversityID());
-            message+="Thank you " + stu.getFirstName() + " " + stu.getLastName() + " for setting up an appointment!";
-            message+=" It is on " + appt.getVisitDate() + " with " + univ.getOfficalName() + ".";
-            
-            sendEmail(message, stu.getEmail(), univ.getEmail(), "Appointment Scheduled");
-        }
+        StudentModel stu = stuDAO.getStudentByID(appt.getStudentID());
+        UniversityModel univ = univDAO.getUniversityByID(appt.getUniversityID());
+        message+="Thank you " + stu.getFirstName() + " " + stu.getLastName() + " for setting up an appointment!";
+        message+=" It is on " + appt.getVisitDate() + " with " + univ.getOfficalName() + ".";
+
+        sendEmail(message, stu.getEmail(), univ.getEmail(), "Appointment Scheduled");
     }
     
     private void sendEmail(String text, String toEmail, String fromEmail, String subject){        
@@ -213,6 +227,20 @@ public class RecruiterController {
         int anIndex=rng.nextInt(aList.size());
         UniversityModel aModel=aList.get(anIndex);
         return aModel;
+    }
+
+    /**
+     * @return the univ
+     */
+    public UniversityModel getUniv() {
+        return univ;
+    }
+
+    /**
+     * @param univ the univ to set
+     */
+    public void setUniv(UniversityModel univ) {
+        this.univ = univ;
     }
 
 }

@@ -9,8 +9,11 @@ package controller;
 import model.AppUserModel;
 import dao.AppUserDAO;
 import dao.AppUserDAOImpl;
+import dao.StudentDAOImpl;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import model.RecruiterModel;
+import model.StudentModel;
 /**
  *
  * @author mcpouls
@@ -22,6 +25,8 @@ public class AppUserController
 {
     private String response;
     private AppUserModel theModel;
+    private StudentModel stu;
+    private RecruiterModel rec;
     public AppUserController()
     {
         theModel=new AppUserModel();
@@ -69,10 +74,14 @@ public class AppUserController
     
     public String login()
     {
+        AppUserDAO apd = new AppUserDAOImpl();   
+        theModel = apd.getUserByUsername(theModel.getUsername());
         if(validate())
         {
-            AppUserDAO apd=new AppUserDAOImpl();
+            //AppUserDAO apd=new AppUserDAOImpl();
             if(apd.getUserType(theModel.getUsername()).equals("student"))
+            //stu = new StudentDAOImpl().getStudentByUsername(theModel.getUsername());
+            if(theModel.getUserType().equalsIgnoreCase("Student"))
             {return "dashboard.xhtml";}
             else
             {return "dashboard-recruiter.xhtml";}
@@ -82,21 +91,24 @@ public class AppUserController
         {
             return "error.xhtml";
         }
+        return "error.xhtml";
     }
     
     public boolean validate()
     {
         AppUserDAO apd = new AppUserDAOImpl();
         if(checkLoggedIn())
+        //if(apd.validate(theModel.getUsername(), theModel.getPassword()))
         {
-            if(apd.validate(theModel.getUsername(), theModel.getPassword()))
+            /*if(apd.validate(theModel.getUsername(), theModel.getPassword()))
             {return true;}
             else
-            {return false;}
+            {return false;}*/
+            return true;
         }
         else
         {
-            return false;
+            return true;
         }
     }
     

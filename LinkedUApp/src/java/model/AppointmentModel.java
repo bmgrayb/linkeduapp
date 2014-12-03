@@ -14,7 +14,9 @@ import java.sql.Date;
 public class AppointmentModel {
     private int universityID, studentID;
     private Date visitDate;
-
+    private String username;
+    private StudentModel stu;
+    
     /**
      * @return the universityID
      */
@@ -54,6 +56,35 @@ public class AppointmentModel {
      * @param visitDate the visitDate to set
      */
     public void setVisitDate(Date visitDate) {
-        this.visitDate = visitDate;
+        java.util.Date date = visitDate;
+        this.visitDate = new Date(date.getTime());
+    }
+
+    /**
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    /**
+     * @return the stu
+     */
+    public StudentModel getStu() {
+        return stu;
+    }
+
+    /**
+     * @param stu the stu to set
+     */
+    public void setStu(StudentModel stu) {
+        this.stu = stu;
     }
 }

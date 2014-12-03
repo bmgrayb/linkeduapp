@@ -37,7 +37,7 @@ public class SearchController {
     public SearchController(){
         //Setting default values
         searchType = "Student";
-        state = null;
+        state = "none";
         gpaHigh = gpaLow = -1;
         gpaIndex = enrollIndex = -1;
         enrollmentHigh = enrollmentLow = year = -1;
@@ -86,16 +86,16 @@ public class SearchController {
     private ArrayList<UniversityModel> univSearch(){
         ArrayList<UniversityModel> uList = null; // = new ArrayList<>();
                 
-        if(searchType.equals("University")){
+       if(searchType.equals("University")){
            UniversityDAO uDAO = new UniversityDAOImpl();
            
-           if(enrollmentLow != -1 && state != null){
+           if(enrollmentLow != -1 && !state.equals("none")){
                return uDAO.getUniversitiesByStateAndRange(state,enrollmentLow,enrollmentHigh);
            }
            else if(enrollmentLow != -1){
                return uDAO.getUniversitiesBetween(enrollmentLow,enrollmentHigh);
            }
-           else if(state != null){
+           else if(!state.equals("none")){
                return uDAO.getUniversitesByState(state);
            }
            else

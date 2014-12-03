@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
     <h:head>
         <title>LinkedU</title>
         <link href="css/style.css" rel="stylesheet"/>
@@ -27,7 +29,12 @@
                    <p:watermark for="login" value="User Name" />
                    <h:inputSecret id="pw" class="main-field" value="#{appUserController.theModel.password}"></h:inputSecret><br/>
                    <p:watermark for="pw" value="Password" />
-                   <h:commandButton id="loginbutton" value="Login" class="main-login-button" action="#{appUserController.login()}"/>
+                   <h:commandButton id="loginbutton" value="Login Student" class="main-login-button" action="#{appUserController.login()}" actionListener="#{studentController.setStudent}">
+                       <f:attribute name="username" value="#{appUserController.theModel.username}" />
+                   </h:commandButton> 
+                   <h:commandButton id="recbutton" value="Login Recruiter" class="main-login-button" action="#{appUserController.login()}" actionListener="#{recruiterController.setRecruiter}">
+                       <f:attribute name="username" value="#{appUserController.theModel.username}" />
+                   </h:commandButton>
                </h:form>
                <p>High school student? <a href="join.xhtml">Join now</a></p>
             </div>

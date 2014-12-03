@@ -11,6 +11,7 @@ and open the template in the editor.
     <head>
         <title>Search Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--<link href="css/style.css" rel="stylesheet"/>-->
     </head>
     <body>
 
@@ -39,7 +40,7 @@ and open the template in the editor.
             
             University Criteria<br/>
             <h:selectOneMenu id="stateAbbr" value="#{searchController.state}" >
-                <f:selectItem itemValue="-1" itemLabel="Select State"/>
+                <f:selectItem itemValue="none" itemLabel="Select State"/>
                 <f:selectItem itemValue="CA" itemLabel="California"/>
                 <f:selectItem itemValue="IL" itemLabel="Illinois"/>
                 <f:selectItem itemValue="MA" itemLabel="MA"/>

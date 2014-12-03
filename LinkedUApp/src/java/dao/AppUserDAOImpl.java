@@ -70,6 +70,7 @@ public class AppUserDAOImpl implements AppUserDAO{
             insertString = "INSERT INTO linkedu.AppUser values('"
             + user.getUsername()
             + "','" + user.getPassword()
+            + "','" + user.getUserType()
             +"')";
             
             row = stmt.executeUpdate(insertString);
@@ -117,5 +118,49 @@ public class AppUserDAOImpl implements AppUserDAO{
         
         return type;
     }
+
+    @Override
+    public AppUserModel getUserByUsername(String un) {
+
+        DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
+        String myDB = "jdbc:derby://localhost:1527/linkedu";
+        Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
+
+        String query = "SELECT * FROM LINKEDU.AppUser WHERE USERNAME = '" + un + "'";
+        String type="";
+        String uname="";
+        String pw="";
+        AppUserModel user = new AppUserModel();
+        
+        try{
+            Statement stmt = DBConn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+           
+            while(rs.next()){
+                type = rs.getString("usertype");
+                //uname = rs.getString("username");
+                pw = rs.getString("password");
+                
+                user.setUsername(uname);
+                user.setPassword(pw);
+                user.setUserType(type);
+            } 
+            rs.close();
+            stmt.close();
+            
+        } catch (Exception e) {
+            System.err.println("ERROR: Problems with SQL select");
+            e.printStackTrace();
+        }
+        try {
+            DBConn.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+        
+        return user;
+    }
+    
     
 }

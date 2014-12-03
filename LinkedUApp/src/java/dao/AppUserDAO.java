@@ -18,4 +18,5 @@ public interface AppUserDAO {
     public int addUser(AppUserModel user);
     //this method will return the type of the user passed in
     public String getUserType(String username);
+    public AppUserModel getUserByUsername(String un);
 }

@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Dashboard LinkedU Student</title>
         <link href="css/style.css" rel="stylesheet"/>
@@ -32,14 +33,15 @@
                         </h1> 
                             <p>High School: <h:outputText id="highSchool" escape="false" value="#{studentController.theUserModel.highSchool}"/></p>
                             <p>Year: <h:outputText id="year" escape="false" value="#{studentController.theUserModel.dashYear}"/></p>
-                        <p>GPA: 3.8</p>
-                        <p>Interested Majors: Computer Science, Human Resources, Arts Technology</p>
+                        <p>GPA: <h:outputText id="gpa" escape="false" value="#{studentController.theUserModel.gpa}" /></p>
+                        <p>Interested Majors: <h:outputText id="m" escape="false" value="#{studentController.theUserModel.majors}" /></p>
                 </div>
     
                 </div>
                 <div class="col33">
                     <h2>Mixtape</h2>
-                    <iframe src="//www.youtube.com/embed/3QSjfIeZ_Yo?rel=0" frameborder="0"></iframe>
+                    <h:outputText value="#{studentController.url}"/>         
+                    <iframe src="#{studentController.url}" frameborder="0"></iframe>
                 </div>
             </div>
             <div class="row">
@@ -47,18 +49,19 @@
 
                     <div class="profile-section">
                         <h2>Summary</h2>
-                        <p>Sonny John Moore (born January 15, 1988), better known by his stage name Skrillex, is an electronic dance music producer, DJ, and singer-songwriter.</p>                          
+                        <p><h:outputText id="essay" escape="false" value="#{studentController.theUserModel.essay}" /></p>                          
                     </div>
                     
                     <div class="profile-section">
                         <h2>Test Scores</h2>
-                        <h3>ACT</h3>
-                        <h3>PSAT</h3>
-                        <h3>NMSQT</h3>
+                        <h3>ACT: <h:outputText id="act" escape="false" value="#{studentController.theUserModel.ACT}" /></h3>
+                        <h3>PSAT: <h:outputText id="psat" escape="false" value="#{studentController.theUserModel.PSAT}" /></h3>
+                        <h3>NMSQT: <h:outputText id="nmsqt" escape="false" value="#{studentController.theUserModel.NMSQT}" /></h3>
                     </div>
                     
                     <div class="profile-section">
                         <h2>AP Courses Taken</h2>
+                        <h:outputText id="ap" escape="false" value="#{studentController.theUserModel.apCourse}" />
                     </div>
                     
                     <div class="profile-section">
@@ -66,8 +69,13 @@
                     </div>
                 </div>
                 <div class="col33">
-                    <h2>My Universities</h2>
-                    <h3>Featured University</h3>
+                    <h2>Featured University</h2><br/>
+                    <h:form>
+                        <h3>Official Name: <h:outputText id="name" escape="false" value="#{studentController.featured.officalName}"/></h3>
+                        <h3>Location: <h:outputText id="loc" escape="false" value="#{studentController.featured.city} #{studentController.featured.stAbbr}"/></h3>
+                        <h3>Enrollment: <h:outputText id="enroll" escape="false" value="#{studentController.featured.enrollment}"/></h3>
+                        <p:poll interval="5" listener="#{studentController.changeFeatured()}" update="name loc enroll" />
+                    </h:form>    
                 </div>
             </div>
         </div>
