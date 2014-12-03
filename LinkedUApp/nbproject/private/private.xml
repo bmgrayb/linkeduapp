@@ -3,10 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/model/StudentModel.java</file>
-            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/controller/SearchController.java</file>
-            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/web/results.xhtml</file>
-            <file>file:/Users/brando/dev/linkeduapp/LinkedUApp/src/java/model/UniversityModel.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/error.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/join.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/index.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/edit-student.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/edit-recruiter.xhtml</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/CalendarView.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/dao/StudentDAOImpl.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/dao/StudentDAO.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/controller/RecruiterController.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/model/StudentModel.java</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/web/css/style.css</file>
+            <file>file:/Users/schifano/linkeduapp/LinkedUApp/src/java/controller/StudentController.java</file>
         </group>
     </open-files>
 </project-private>
