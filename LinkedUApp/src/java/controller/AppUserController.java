@@ -11,6 +11,9 @@ import dao.AppUserDAO;
 import dao.AppUserDAOImpl;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author mcpouls
@@ -97,6 +100,18 @@ public class AppUserController
         }
         else
         {
+            FacesContext faces = FacesContext.getCurrentInstance();
+            ExternalContext context=faces.getExternalContext();
+            HttpServletResponse response =(HttpServletResponse) context.getResponse();
+            try
+            {
+                response.sendRedirect("./index.xhtml");
+                faces.responseComplete();
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
             return false;
         }
     }
