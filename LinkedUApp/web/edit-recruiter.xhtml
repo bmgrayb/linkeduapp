@@ -17,7 +17,7 @@
                     </h:form>                    
                 </li>
                 <li><img src="../images/search.png" alt="Search"/></li>
-                <li style="padding-top: 10px;"><h:commandButton id="editStudentButton" value="Edit Profile" action="#{recruiterController.addRecruiter()}" class="edit-button"/></li>
+                <li style="padding-top: 10px;"><h:commandButton id="editStudentButton" value="Edit Profile" action="#{recruiterController.update()}" class="edit-button"/></li>
             </ul>
         </div>
         <!-- END NAVIGATION -->
@@ -31,8 +31,8 @@
                         <img src="images/skrillex.jpg" alt="Skrillex" class="dash-pic"/>
                         <div style="margin-left: 220px;">
                         <h1>
-                            <h:inputText id="firstName" value="#{userController.theUserModel.firstName}"/>&nbsp;                       
-                            <h:inputText id="lastName" value="#{userController.theUserModel.firstName}"/>
+                            <h:inputText id="firstName" value="#{recruiterController.theModel.firstName}"/>&nbsp;                       
+                            <h:inputText id="lastName" value="#{recruiterController.theModel.lastName}"/>
                         </h1> 
                         <p>Summary:</p>
                         </div>
@@ -44,6 +44,10 @@
                     <h:form>
                     <div class="profile-section">
                         <h2>University</h2>
+                    </div>
+                        
+                    <div class="profile-section">
+                        <h:inputText id="email" value="#{recruiterController.theModel.email}"/>
                     </div>
                     
                     <div class="profile-section">
