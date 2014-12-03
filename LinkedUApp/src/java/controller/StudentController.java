@@ -87,6 +87,13 @@ public class StudentController {
         else return "error.xhml";
     }//end create Student
     
+    public String update(){
+        StudentDAO stuDAO = new StudentDAOImpl();
+        int status = stuDAO.updateStudent(theUserModel);
+        if(status == 1)
+            return "dashboard.xhtml";
+        else return "error.xhtml";
+    }
     
     public void requestInfoFromRecruiter(int recID){
         StudentModel stu = this.getTheUserModel();
