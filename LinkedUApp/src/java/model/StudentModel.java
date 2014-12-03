@@ -5,6 +5,8 @@
  */
 package model;
 
+import org.primefaces.model.UploadedFile;
+
 /**
  *
  * @author chris
@@ -15,10 +17,23 @@ public class StudentModel {
     private boolean isPaidService;
     private float gpa;
     private int studentID, ACT, SAT, PSAT, NMSQT, year;
+    // PHOTOS
+    private UploadedFile uploadedPicture;
     //Add in the picture as blob object.
   //  private String[] majors;
   //  private String[] universities;
 
+    // UPLOAD PHOTOS
+    public UploadedFile getUploadedPicture()
+    {
+        return uploadedPicture;
+    }
+
+    public void setUploadedPicture(UploadedFile uploadedPicture)
+    {
+        this.uploadedPicture = uploadedPicture;
+    }
+    
     /**
      * @return the username
      */

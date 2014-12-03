@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import model.StudentModel;
 
@@ -23,6 +24,7 @@ public interface StudentDAO {
     public ArrayList<StudentModel> getStudentsGPARange(double lower, double higher);
     public ArrayList<StudentModel> getStudentGPARangeAndYear(int year, double lower, double higher);
     
+    public InputStream getPictureByUsername(String un);
     public int updateStudent(StudentModel stu);
     public int addStudent(StudentModel stu);
 }

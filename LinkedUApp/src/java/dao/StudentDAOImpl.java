@@ -5,6 +5,7 @@
  */
 package dao;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -305,6 +306,8 @@ public class StudentDAOImpl implements StudentDAO{
         Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
         String insertString = "";
         
+        InputStream in = (InputStream) stu.getUploadedPicture();
+        
         int row = 0;
         
         try{
@@ -328,7 +331,7 @@ public class StudentDAOImpl implements StudentDAO{
             + "','" + stu.getUniversities()
             + "','" + stu.getMajors()
             + "'," + stu.getIsPaidService()
-            +", null"
+            +", " + in
             +")";
             
             row = stmt.executeUpdate(insertString);
@@ -419,6 +422,83 @@ public class StudentDAOImpl implements StudentDAO{
         
         
     }
+    
+    
+    @Override
+    public InputStream getPictureByUsername(String un) {
+
+        DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
+        String myDB = "jdbc:derby://localhost:1527/linkedu";
+        Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
+
+        String query = "SELECT * FROM linkedu.Student where username = '" +un + "'";
+        
+        StudentModel temp = new StudentModel();
+        
+        try{
+            Statement stmt = DBConn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            
+            String username, password, email, firstName, lastName, highSchool;
+            String essay, apCourse, universities, majors;
+            boolean isPaidService;
+            float gpa;
+            int studentID, ACT, SAT, PSAT, NMSQT, year;
+
+            while(rs.next()){
+                
+                username = rs.getString("username");
+                password = rs.getString("password");
+                firstName = rs.getString("firstname");
+                lastName = rs.getString("lastname");
+                email = rs.getString("email");
+                highSchool = rs.getString("highschool");
+                essay = rs.getString("essay");
+                apCourse = rs.getString("apcourse");
+                universities = rs.getString("universities");
+                majors = rs.getString("majors");
+                studentID = rs.getInt("studentid");
+                ACT = rs.getInt("actscore");
+                SAT = rs.getInt("satscore");
+                PSAT = rs.getInt("psatscore");
+                NMSQT = rs.getInt("NMSQTscore");
+                year = rs.getInt("classyear");
+                gpa = rs.getFloat("gpa");
+                isPaidService = rs.getBoolean("ispaidservice");
+            
+                temp.setUsername(username);
+                temp.setPassword(password);
+                temp.setStudentID(studentID);
+                temp.setEmail(email);
+                temp.setFirstName(firstName);
+                temp.setLastName(lastName);
+                temp.setYear(year);
+                temp.setHighSchool(highSchool);
+                temp.setGpa(gpa);
+                temp.setACT(ACT);
+                temp.setSAT(SAT);
+                temp.setPSAT(PSAT);
+                temp.setNMSQT(NMSQT);
+                temp.setApCourse(apCourse);
+                temp.setEssay(essay);
+                temp.setUniversities(universities);
+                temp.setMajors(majors);
+                temp.setIsPaidService(isPaidService);
+            } 
+            
+        } catch (Exception e) {
+            System.err.println("ERROR: Problems with SQL select");
+            e.printStackTrace();
+        }
+        try {
+            DBConn.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    
+        return (InputStream) temp.getUploadedPicture();
+    }
+
 
     @Override
     public ArrayList<StudentModel> getStudentsByYear(int year) {
