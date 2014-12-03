@@ -75,6 +75,7 @@
                         <h3>Location: <h:outputText id="loc" escape="false" value="#{studentController.featured.city} #{studentController.featured.stAbbr}"/></h3>
                         <h3>Enrollment: <h:outputText id="enroll" escape="false" value="#{studentController.featured.enrollment}"/></h3>
                         <p:poll interval="5" listener="#{studentController.changeFeatured()}" update="name loc enroll" />
+                        <h:commandButton action="apply.xhtml" value="Apply Now!"/>
                     </h:form>    
                 </div>
             </div>
