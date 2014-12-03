@@ -13,8 +13,11 @@ import dao.RecruiterDAO;
 import dao.RecruiterDAOImpl;
 import dao.StudentDAO;
 import dao.StudentDAOImpl;
+import dao.UniversityDAOImpl;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.Date;
+import javax.faces.event.ActionEvent;
 
 /**
  *
@@ -27,11 +30,18 @@ public class AppointmentController
 {
     private String response;
     private AppointmentModel theModel;
+    private Date date;
     public AppointmentController()
     {
         theModel=new AppointmentModel();
     }
 
+    public void setRecruiter(ActionEvent event){
+        String un = (String)event.getComponent().getAttributes().get("username");
+        theModel.setUniversityID(new RecruiterDAOImpl().getRecruiterByUsername(un).getUniversityID());
+        //url = new MultimediaDAOImpl().getURLByID(stu.getStudentID()).getUrl();
+    }
+    
     /**
      * @return the response
      */
@@ -72,14 +82,33 @@ public class AppointmentController
         this.theModel = theModel;
     }
     
-    public String addAppointment()
+    public void addAppointment()
     {
         AppointmentDAO apptDAO= new AppointmentDAOImpl();
+        StudentDAO stuDAO = new StudentDAOImpl();
+        theModel.setVisitDate(new java.sql.Date(getDate().getTime()));
+        theModel.setStudentID(stuDAO.getStudentByUsername(theModel.getUsername()).getStudentID());
+        theModel.setUniversityID(100);
+        
         int status=apptDAO.addAppointment(theModel);
-        if(status==1)
-            return "dashboard.xhtml";
+        /*if(status==1)
+            return "dashboard-recruiter.xhtml";
         else
-            return "error.xhtml";
+            return "error.xhtml";*/
+    }
+
+    /**
+     * @return the date
+     */
+    public Date getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(Date date) {
+        this.date = date;
     }
     
 }

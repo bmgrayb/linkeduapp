@@ -14,7 +14,7 @@ import model.MultimediaModel;
  */
 public interface MultimediaDAO {
     public ArrayList<MultimediaModel> getAllURL();
-    public ArrayList<MultimediaModel> getURLByID(int studentID);
+    public MultimediaModel getURLByID(int studentID);
     public int updateMultimedia(MultimediaModel mult);
     public int addMultimedia(MultimediaModel mult);
 }

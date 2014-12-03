@@ -71,16 +71,14 @@ public class MultimediaDAOImpl implements MultimediaDAO{
     }
 
     @Override
-    public ArrayList<MultimediaModel> getURLByID(int studentID) {
+    public MultimediaModel getURLByID(int studentID) {
 
         DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
         String myDB = "jdbc:derby://localhost:1527/linkedu";
         Connection DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
 
         String query = "SELECT * FROM LINKEDU.Multimedia where studentID = " + studentID;
-        
-        ArrayList<MultimediaModel> mult = new ArrayList<MultimediaModel>();
-        
+        MultimediaModel temp = new MultimediaModel();        
         try{
             Statement stmt = DBConn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -95,15 +93,12 @@ public class MultimediaDAOImpl implements MultimediaDAO{
                 mixtapeID = rs.getInt("mixtapeID");
                 url = rs.getString("url");
                 rating = rs.getFloat("rating");
-                
-                MultimediaModel temp = new MultimediaModel();
-                
+                                
                 temp.setStudentID(studentID);
                 temp.setMixtapeID(mixtapeID);
                 temp.setUrl(url);
                 temp.setRating(rating);
             
-                mult.add(temp);
             } 
             
         } catch (Exception e) {
@@ -116,7 +111,7 @@ public class MultimediaDAOImpl implements MultimediaDAO{
             System.err.println(e.getMessage());
         }
     
-        return mult;
+        return temp;
     
     }
     

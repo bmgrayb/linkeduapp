@@ -7,6 +7,11 @@
     <h:head>
         <title>Dashboard LinkedU Recruiter</title>
         <link href="css/style.css" rel="stylesheet"/>
+        <script>
+            function popup(){
+                alert("Thanks for schedulding an appointment! \n An email has been sent.")
+            }
+        </script>
     </h:head>
     <h:body id="dashboard">
         <!-- START NAVIGATION -->
@@ -33,10 +38,10 @@
                         <img src="images/skrillex.jpg" alt="Skrillex" class="dash-pic"/>
                         <div style="margin-left: 220px;">
                         <h1>
-                            <h:outputText id="firstName" escape="false" value="#{studentController.theUserModel.firstName}"/>&nbsp;                       
-                            <h:outputText id="lastName" escape="false" value="#{studentController.theUserModel.lastName}"/>  
+                            <h:outputText id="firstName" escape="false" value="#{recruiterController.theModel.firstName}"/>&nbsp;                       
+                            <h:outputText id="lastName" escape="false" value="#{recruiterController.theModel.lastName}"/>  
                         </h1> 
-                        <p>Summary:</p>
+                            <p>Email: <h:outputText id="email" escape="false" value="#{recruiterController.theModel.email}"/></p>
                         </div>
                     </h:form>
                 </div>
@@ -45,15 +50,17 @@
                 <div class="col66">
                     <h:form>
                     <div class="profile-section">
-                        <h2><h:outputText id="universityRepresented" escape="false" value="#{studentController.theUserModel.firstName}"/></h2>
-                        <p>Summary of University <h:outputText id="universitySummary" escape="false" value="#{studentController.theUserModel.firstName}"/></p>
+                        <h2>University Info</h2>
+                        <p>University: <h:outputText id="universitySummary" escape="false" value="#{recruiterController.univ.officalName}"/></p>
+                        <p>Location <h:outputText id="loc" escape="false" value="#{recruiterController.univ.city} #{recruiterController.univ.stAbbr}"/></p>
+                        <p>Enrollment: <h:outputText id="enroll" escape="false" value="#{recruiterController.univ.enrollment}"/></p>
                     </div>
                     </h:form>
                     
                     <div class="profile-section">
                         <h2>Make An Appointment!</h2>
                           <h:form id="appointment">
-                            <div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{studentController.theUserModel.firstName}" class="join-field"></h:inputText><br/>
+                            <!--<div class="field-text">First Name:</div>      <h:inputText id="firstName" value="#{studentController.theUserModel.firstName}" class="join-field"></h:inputText><br/>
                             <div class="field-text">Last Name:</div>       <h:inputText id="lastName" value="#{studentController.theUserModel.lastName}" class="join-field"></h:inputText><br/>
                             
                             <div class="field-text">High School:</div>
@@ -72,32 +79,35 @@
                                             <f:selectItem itemValue="3" itemLabel="Junior" />
                                             <f:selectItem itemValue="4" itemLabel="Senior" />	   							
                                         </h:selectOneMenu><br/><br/>
-                            <div class="field-text">Email:</div>           <h:inputText id="email" value="#{studentController.theUserModel.email}" class="join-field"></h:inputText><br/>
+                            <div class="field-text">Email:</div>           <h:inputText id="email" value="#{studentController.theUserModel.email}" class="join-field"></h:inputText><br/> -->
+                            <div class="field-text">LinkedU Username:</div>      <h:inputText id="firstName" value="#{appointmentController.theModel.username}" class="join-field"></h:inputText><br/>
                             <p:growl id="msgs" showDetail="true" />
  
                                 <h:panelGrid columns="2" cellpadding="5">
-                                    <p:outputLabel for="popup" value="Popup:" />
-                                    <p:calendar id="popup" value="#{calendarView.date2}" />
+                                    <p:outputLabel for="popup" value="Date: " />
+                                    <p:calendar id="popup" value="#{appointmentController.date}" />
 
-                                    <p:outputLabel for="time" value="Time:" />
-                                    <p:calendar id="time" value="#{calendarView.date11}" pattern="HH:mm a" timeOnly="true"  />
+                                    <!--<p:outputLabel for="time" value="Time:" />
+                                    <p:calendar id="time" value="#{calendarView.date11}" pattern="HH:mm a" timeOnly="true"  /> -->
                                 </h:panelGrid>
 
                                 <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                                     <p:panelGrid id="display" columns="2" columnClasses="label,value">
 
-                                        <h:outputText value="Popup:" />
-                                        <h:outputText value="#{calendarView.date2}">
+                                        <h:outputText value="Date:" />
+                                        <h:outputText value="#{appointmentController.date}">
                                             <f:convertDateTime pattern="MM/dd/yyyy" />
                                         </h:outputText>
 
-                                        <h:outputText value="Time:" />
+                                        <!--<h:outputText value="Time:" />
                                         <h:outputText value="#{calendarView.date11}">
                                             <f:convertDateTime pattern="HH:mm a" />
-                                        </h:outputText>
+                                        </h:outputText> -->
                                     </p:panelGrid>
                                 </p:dialog>
-                            <p:commandButton value="Submit" update="msgs" actionListener="#{calendarView.click}" icon="ui-icon-check" class="join-button"/>
+                            <p:commandButton value="Submit" update="msgs" onclick="popup()" action="#{appointmentController.addAppointment()}" actionListener="#{appointmentController.setRecruiter}" icon="ui-icon-check" class="join-button">
+                                <f:attribute name="recid" value="#{recruiterController.theModel.recruiterID}" />
+                            </p:commandButton>
 
                         </h:form>
                     </div>

@@ -12,6 +12,7 @@ and open the template in the editor.
     <head>
         <title>Result Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="css/style.css" rel="stylesheet"/>
     </head>
     <h:body>
         
@@ -27,6 +28,17 @@ and open the template in the editor.
                 <f:facet name="header"><h:outputText value="High Schools" /></f:facet>
                 <h:outputText value="#{aRow.highSchool}" />
             </h:column>
+           
+           <h:column>
+                <f:facet name="header"><h:outputText value="View Student" /></f:facet>
+                <h:form>
+                    <h:commandButton  value="View" action="student.xhtml" actionListener="#{studentResultController.setID}">
+                        <f:attribute name="username" value="#{aRow.username}" />
+                    </h:commandButton>
+                </h:form>
+                <!--<a href="student.xhtml" ><h:commandButton value="View" action="#{studentResultController.setStuID(aRow.studentID)}"/></a>-->
+           </h:column>
+
         </h:dataTable>
         
         <br/>
