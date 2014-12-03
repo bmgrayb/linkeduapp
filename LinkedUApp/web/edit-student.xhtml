@@ -17,7 +17,7 @@
             <ul class="nav">
                 <li style="padding-top: 13px;"><a href="index.xhtml"><img src="../images/u.png" alt="LinkedU Logo"/></a></li>
                 <li><img src="../images/search.png" alt="Search"/></li>
-                <li style="padding-top: 10px;"><h:commandButton id="editStudentButton" value="Save Profile" action="#{userController.update()}" class="edit-button"/></li>
+                <li style="padding-top: 10px;"><h:commandButton id="editStudentButton" value="Save Profile" action="#{studentController.update()}" class="edit-button"/></li>
             </ul>
         </div>
         <!-- END NAVIGATION -->
@@ -37,13 +37,15 @@
                         <div style="margin-left: 220px;">
                         <h:form>
                         <h1>
-                            <h:inputText id="firstName" value="#{userController.theUserModel.firstName}"/>                     
-                            <h:inputText id="lastName" value="#{userController.theUserModel.firstName}"/>
+                            <h:inputText id="firstName" value="#{userController.theUserModel.firstName}"></h:inputText>                       
+                            <h:inputText id="lastName" value="#{userController.theUserModel.lastName}"></h:inputText>  
                         </h1> 
-                            <p>High School: <h:inputText id="highSchool" value="#{userController.theUserModel.firstName}"/></p>
-                            <p>Year: <h:inputText id="year" value="#{userController.theUserModel.firstName}"/></p>
-                        <p>GPA: <h:inputText id="gpa" value="#{userController.theUserModel.firstName}"/></p>
-                        <p>Interested Majors: Computer Science, Human Resources, Arts Technology</p>
+                            <p>High School: <h:inputText id="highSchool" value="#{userController.theUserModel.highSchool}"></h:inputText></p>
+                            <p>Year: <h:inputText id="year" value="#{userController.theUserModel.dashYear}"></h:inputText></p>
+                        <p>GPA: <h:inputText id="gpa" value="#{userController.theUserModel.gpa}"></h:inputText></p>
+                        <p>Interested Majors: <h:inputText id="gpa" value="#{userController.theUserModel.majors}"></h:inputText></p>
+                        <p>Interested Universities: <h:inputText id="gpa" value="#{userController.theUserModel.universities}"></h:inputText></p>
+                <!--        <p>Interested Majors: Computer Science, Human Resources, Arts Technology</p>   -->
                         </h:form>
                 </div>
     
@@ -56,31 +58,35 @@
             <div class="row">
                 <div class="col66">
 
-                    <div class="profile-section">
+                <!--    <div class="profile-section">
                         <h:form>
                         <h2>Summary</h2>
-                        <p><h:inputText id="summary" value="#{userController.theUserModel.firstName}"/></p>  
+                        <p><h:inputText id="summary" value="#{userController.theUserModel.essay}"></h:inputText></p>  
                         </h:form>
-                    </div>
+                    </div>  -->
                     
                     <div class="profile-section">
                         <h:form>
                         <h2>Test Scores</h2>
                         <h3>ACT</h3>
-                        <p><h:inputText id="act" value="#{userController.theUserModel.firstName}"/></p>
+                        <p><h:inputText id="act" value="#{userController.theUserModel.ACT}"></h:inputText></p>
+                        <h3>SAT</h3>
+                        <p><h:inputText id="act" value="#{userController.theUserModel.SAT}"></h:inputText></p>
                         <h3>PSAT</h3>
-                        <p><h:inputText id="psat" value="#{userController.theUserModel.firstName}"/></p>
+                        <p><h:inputText id="psat" value="#{userController.theUserModel.PSAT}"></h:inputText></p>
                         <h3>NMSQT</h3>
-                        <p><h:inputText id="nmsqt" value="#{userController.theUserModel.firstName}"/></p>
+                        <p><h:inputText id="nmsqt" value="#{userController.theUserModel.NMSQT}"></h:inputText></p>
                         </h:form>
                     </div>
                     
                     <div class="profile-section">
                         <h2>AP Courses Taken</h2>
+                        <p><h:inputText id="act" value="#{userController.theUserModel.apCourse}"></h:inputText></p>
                     </div>
                     
                     <div class="profile-section">
                         <h2>College Essays</h2>
+                        <p><h:inputText id="act" value="#{userController.theUserModel.essay}"></h:inputText></p>
                     </div>
                 </div>
                 <div class="col33">
